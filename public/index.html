@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bali Trip 2026 — 巴厘岛之旅</title>
+<style>
+  :root {
+    --bg: #f5f5f7;
+    --card: #ffffff;
+    --text: #1d1d1f;
+    --text2: #6e6e73;
+    --text3: #86868b;
+    --accent: #0071e3;
+    --ocean: #0a84ff;
+    --teal: #30d5c8;
+    --sunset: #ff6723;
+    --gold: #f5a623;
+    --green: #34c759;
+    --pink: #ff2d55;
+    --purple: #af52de;
+    --r: 20px;
+    --shadow: 0 4px 24px rgba(0,0,0,0.06);
+    --shadow-lg: 0 12px 48px rgba(0,0,0,0.10);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', 'PingFang SC', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(135deg, #0a2463 0%, #1b4f72 30%, #1a936f 60%, #30d5c8 100%);
+    padding: 80px 24px 60px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top:0; left:0; right:0; bottom:0;
+    background: radial-gradient(ellipse at 30% 80%, rgba(255,103,35,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 20%, rgba(48,213,200,0.2) 0%, transparent 50%);
+  }
+  .hero * { position: relative; z-index: 1; }
+  .hero-icon { font-size: 56px; margin-bottom: 16px; }
+  .hero h1 { font-size: 48px; font-weight: 700; letter-spacing: -1px; margin-bottom: 8px; }
+  .hero .subtitle { font-size: 20px; opacity: 0.85; font-weight: 400; }
+  .hero .date-badge {
+    display: inline-block; margin-top: 20px; padding: 8px 24px;
+    background: rgba(255,255,255,0.15); border-radius: 50px;
+    font-size: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  /* ===== OVERVIEW CARDS ===== */
+  .overview { padding: 48px 0; }
+  .overview h2 { font-size: 32px; font-weight: 700; text-align: center; margin-bottom: 32px; letter-spacing: -0.5px; }
+  .cards-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .card {
+    background: var(--card); border-radius: var(--r); padding: 24px;
+    box-shadow: var(--shadow); transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .card-icon { font-size: 32px; margin-bottom: 12px; }
+  .card-label { font-size: 13px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
+  .card-title { font-size: 18px; font-weight: 600; margin: 4px 0; }
+  .card-detail { font-size: 14px; color: var(--text2); line-height: 1.5; }
+  .card-detail strong { color: var(--text); font-weight: 600; }
+
+  /* ===== DAY SECTION ===== */
+  .day-section { padding: 48px 0 32px; }
+  .day-header {
+    display: flex; align-items: center; gap: 16px; margin-bottom: 32px;
+    padding-bottom: 16px; border-bottom: 1px solid #e5e5ea;
+  }
+  .day-num {
+    width: 56px; height: 56px; border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; font-weight: 700; color: #fff; flex-shrink: 0;
+  }
+  .day-header-text h2 { font-size: 26px; font-weight: 700; letter-spacing: -0.3px; }
+  .day-header-text .day-date { font-size: 14px; color: var(--text3); }
+  .day-theme {
+    display: inline-block; padding: 4px 12px; border-radius: 8px;
+    font-size: 12px; font-weight: 600; color: #fff; margin-top: 4px;
+  }
+
+  /* ===== TIMELINE ===== */
+  .timeline { position: relative; padding-left: 32px; }
+  .timeline::before {
+    content: ''; position: absolute; left: 7px; top: 8px; bottom: 8px;
+    width: 2px; background: #e5e5ea; border-radius: 1px;
+  }
+  .tl-item {
+    position: relative; margin-bottom: 24px;
+    background: var(--card); border-radius: 16px; padding: 20px 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04); border: 1px solid #f0f0f2;
+  }
+  .tl-item::before {
+    content: ''; position: absolute; left: -29px; top: 24px;
+    width: 12px; height: 12px; border-radius: 50%;
+    border: 3px solid; background: #fff;
+  }
+  .tl-time {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.3px;
+    margin-bottom: 4px;
+  }
+  .tl-title { font-size: 17px; font-weight: 600; margin-bottom: 6px; }
+  .tl-desc { font-size: 14px; color: var(--text2); line-height: 1.65; }
+  .tl-desc em { font-style: normal; color: var(--text); font-weight: 500; }
+  .tl-tag {
+    display: inline-block; padding: 3px 10px; border-radius: 6px;
+    font-size: 11px; font-weight: 600; margin-top: 8px; margin-right: 4px;
+  }
+  .tag-food { background: #fff3e6; color: #e67e22; }
+  .tag-sight { background: #e8f5e9; color: #2e7d32; }
+  .tag-tip { background: #e3f2fd; color: #1565c0; }
+  .tag-nightlife { background: #f3e5f5; color: #7b1fa2; }
+  .tag-transport { background: #fce4ec; color: #c62828; }
+  .tag-beach { background: #e0f7fa; color: #00838f; }
+  .tag-culture { background: #fff8e1; color: #f57f17; }
+
+  /* Color variants for timeline dots */
+  .tl-ocean::before { border-color: var(--ocean); }
+  .tl-teal::before { border-color: var(--teal); }
+  .tl-sunset::before { border-color: var(--sunset); }
+  .tl-gold::before { border-color: var(--gold); }
+  .tl-green::before { border-color: var(--green); }
+  .tl-pink::before { border-color: var(--pink); }
+  .tl-purple::before { border-color: var(--purple); }
+
+  /* ===== TIPS SECTION ===== */
+  .tips-section { padding: 48px 0 60px; }
+  .tips-section h2 { font-size: 32px; font-weight: 700; text-align: center; margin-bottom: 32px; letter-spacing: -0.5px; }
+  .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+  .tip-card {
+    background: var(--card); border-radius: var(--r); padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .tip-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+  .tip-card p { font-size: 14px; color: var(--text2); line-height: 1.6; }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    text-align: center; padding: 40px 24px; color: var(--text3); font-size: 13px;
+    border-top: 1px solid #e5e5ea;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 32px; }
+    .hero .subtitle { font-size: 16px; }
+    .day-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .overview h2, .tips-section h2 { font-size: 26px; }
+    .tl-item { padding: 16px; }
+  }
+
+  /* ===== FLIGHT CARD ===== */
+  .flight-card {
+    background: var(--card); border-radius: var(--r); padding: 20px 24px;
+    box-shadow: var(--shadow); margin-bottom: 12px;
+    display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  }
+  .flight-route {
+    display: flex; align-items: center; gap: 12px; flex: 1; min-width: 200px;
+  }
+  .flight-city { text-align: center; }
+  .flight-city .code { font-size: 22px; font-weight: 700; }
+  .flight-city .name { font-size: 12px; color: var(--text3); }
+  .flight-city .time { font-size: 14px; color: var(--text2); font-weight: 500; }
+  .flight-line {
+    flex: 1; height: 2px; background: linear-gradient(90deg, var(--ocean), var(--teal));
+    position: relative; min-width: 60px;
+  }
+  .flight-line::after {
+    content: '✈'; position: absolute; right: -4px; top: -10px;
+    font-size: 16px;
+  }
+  .flight-info { font-size: 13px; color: var(--text3); }
+  .flight-info strong { color: var(--text2); }
+
+  /* Divider */
+  .section-divider {
+    height: 1px; background: linear-gradient(90deg, transparent, #e5e5ea, transparent);
+    margin: 16px 0;
+  }
+
+  /* Highlight box */
+  .highlight-box {
+    background: linear-gradient(135deg, #e8f4fd, #f0f9ff);
+    border-radius: 16px; padding: 20px 24px; margin: 24px 0;
+    border-left: 4px solid var(--ocean);
+  }
+  .highlight-box h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+  .highlight-box p { font-size: 14px; color: var(--text2); line-height: 1.6; }
+
+  .warning-box {
+    background: linear-gradient(135deg, #fff8e1, #fffde7);
+    border-radius: 16px; padding: 20px 24px; margin: 24px 0;
+    border-left: 4px solid var(--gold);
+  }
+  .warning-box h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+  .warning-box p { font-size: 14px; color: var(--text2); line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero">
+  <div class="hero-icon">🌴</div>
+  <h1>Bali 2026</h1>
+  <p class="subtitle">巴厘岛 · 仓古 · 乌布 · 乌鲁瓦图 · 雅加达</p>
+  <div class="date-badge">2026.02.19 — 02.25 · 7天6夜 · 两人同行</div>
+</section>
+
+<!-- ==================== OVERVIEW ==================== -->
+<section class="overview">
+  <div class="container">
+    <h2>行程总览</h2>
+
+    <!-- Flights -->
+    <div class="flight-card">
+      <div class="flight-route">
+        <div class="flight-city">
+          <div class="code">CAN</div>
+          <div class="name">广州白云 T2</div>
+          <div class="time">02:30</div>
+        </div>
+        <div class="flight-line"></div>
+        <div class="flight-city">
+          <div class="code">CGK</div>
+          <div class="name">雅加达 T3</div>
+          <div class="time">06:35</div>
+        </div>
+      </div>
+      <div class="flight-info"><strong>8B861</strong> · 2月19日周四 · 飞行约5h · PNR: YJD13E</div>
+    </div>
+    <div class="flight-card">
+      <div class="flight-route">
+        <div class="flight-city">
+          <div class="code">CGK</div>
+          <div class="name">雅加达 T2</div>
+          <div class="time">18:00</div>
+        </div>
+        <div class="flight-line"></div>
+        <div class="flight-city">
+          <div class="code">DPS</div>
+          <div class="name">巴厘岛</div>
+          <div class="time">20:50</div>
+        </div>
+      </div>
+      <div class="flight-info"><strong>QZ818</strong> · 2月19日周四 · 飞行约1h50m</div>
+    </div>
+    <div class="flight-card">
+      <div class="flight-route">
+        <div class="flight-city">
+          <div class="code">DPS</div>
+          <div class="name">巴厘岛</div>
+          <div class="time">18:50</div>
+        </div>
+        <div class="flight-line"></div>
+        <div class="flight-city">
+          <div class="code">CGK</div>
+          <div class="name">雅加达 T2</div>
+          <div class="time">19:50</div>
+        </div>
+      </div>
+      <div class="flight-info"><strong>QZ809</strong> · 2月23日周一</div>
+    </div>
+    <div class="flight-card">
+      <div class="flight-route">
+        <div class="flight-city">
+          <div class="code">CGK</div>
+          <div class="name">雅加达 T3</div>
+          <div class="time">18:50</div>
+        </div>
+        <div class="flight-line"></div>
+        <div class="flight-city">
+          <div class="code">CAN</div>
+          <div class="name">广州白云 T2</div>
+          <div class="time">01:30+1</div>
+        </div>
+      </div>
+      <div class="flight-info"><strong>8B860</strong> · 2月24日周二 · 2月25日凌晨到达</div>
+    </div>
+
+    <div style="height: 24px;"></div>
+
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon">🏨</div>
+        <div class="card-label">酒店</div>
+        <div class="card-title">Amandaya Canggu</div>
+        <div class="card-detail">
+          <strong>地址：</strong>9 Gang Jalak Indah, Canggu, Bali 80361<br>
+          <strong>房型：</strong>Deluxe Room（大床/无烟）<br>
+          <strong>入住：</strong>2月19日 22:00<br>
+          <strong>退房：</strong>2月23日 12:00（共4晚）<br>
+          <strong>含：</strong>免费早餐、WiFi、迎宾饮料<br>
+          <strong>预订号：</strong>Agoda 955713410
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🛵</div>
+        <div class="card-label">交通</div>
+        <div class="card-title">租摩托车自驾</div>
+        <div class="card-detail">
+          <strong>费用：</strong>约 50,000-70,000 IDR/天（≈25-35元）<br>
+          <strong>推荐：</strong>到仓古后街边租车店，选 Honda Vario 或 Scoopy<br>
+          <strong>注意：</strong>需国际驾照 / 当地驾照；全程左侧通行<br>
+          <strong>油费：</strong>约 10,000 IDR/升，路边小摊也有卖
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">💰</div>
+        <div class="card-label">预算参考</div>
+        <div class="card-title">实用花费指南</div>
+        <div class="card-detail">
+          <strong>汇率：</strong>1 CNY ≈ 2,200 IDR<br>
+          <strong>本地餐：</strong>25,000-50,000 IDR（12-25元）<br>
+          <strong>西餐/咖啡：</strong>80,000-200,000 IDR（40-100元）<br>
+          <strong>景点门票：</strong>50,000-150,000 IDR（25-75元）<br>
+          <strong>推荐：</strong>机场 ATM 取现汇率最佳，避免路边换汇
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DAY 0: TRAVEL + CAPSULE HOTEL REST ==================== -->
+<section class="day-section">
+  <div class="container">
+    <div class="day-header">
+      <div class="day-num" style="background: linear-gradient(135deg, #1b4f72, #0a84ff);">D0</div>
+      <div class="day-header-text">
+        <h2>出发 · 机场胶囊酒店补眠</h2>
+        <div class="day-date">2月19日 · 周四</div>
+        <div class="day-theme" style="background: var(--ocean);">红眼航班 · 补觉充电 · 飞巴厘岛</div>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <h3>⚠️ 重要提醒：航站楼不同</h3>
+      <p>到达雅加达 <strong>T3</strong>（国际航班），飞巴厘岛从 <strong>T2</strong>（国内航班）出发。航站楼间有免费 <strong>Skytrain</strong> 接驳，约10分钟。胶囊酒店就在 T3 内，退房后坐 Skytrain 去 T2 即可。建议<strong>最晚 16:00</strong> 到达 T2 办理值机。</p>
+    </div>
+
+    <!-- Capsule Hotel Info Card -->
+    <div class="highlight-box" style="border-left-color: var(--purple); background: linear-gradient(135deg, #f3e8fd, #f8f0ff);">
+      <h3>🛸 Digital Airport Hotel · 机场胶囊酒店</h3>
+      <p>
+        <strong>位置：</strong>T3 航站楼国内区域 1 层（Domestic Area 1F）· 印尼首家机场胶囊酒店<br>
+        <strong>房型：</strong>2 间太空舱胶囊（每人一舱）<br>
+        <strong>费用：</strong>约 360,000-380,000 IDR/舱/晚（≈165-175元），按小时计费 6h 起更灵活<br>
+        <strong>押金：</strong>50,000 IDR/人（现金或刷卡，退房时退还）<br>
+        <strong>舱内设施：</strong>门禁卡、LED 屏 + 有线电视、优质床垫枕头毛毯、2 个 USB 充电口、氛围灯 + 阅读灯、镜子、个人储物柜<br>
+        <strong>公共设施：</strong>共用淋浴间（冷热水）、门禁洗手间、免费 WiFi、24h 前台、行李寄存<br>
+        <strong>入住/退房：</strong>Check-in 12:00 起 / Check-out 12:00 前（可提前入住，看空房情况）<br>
+        <strong>预订：</strong>可现场直接入住，也可提前在 Traveloka / Agoda / Booking.com / Klook 预订<br>
+        <strong>联系方式：</strong>+62 811 9000 619 · info-digitalairport@capsuleindonesia.com<br>
+        <strong>官网：</strong>digitalairporthotel.com
+      </p>
+    </div>
+
+    <div class="highlight-box">
+      <h3>🗺️ T3 到胶囊酒店怎么走？（很重要！）</h3>
+      <p>
+        胶囊酒店虽然在 T3 内，但藏在<strong>国内区域</strong>那一侧，从国际到达口不能直接走过去。路线如下：<br><br>
+        <strong>① 领完行李出国际到达口</strong>（1 层）<br>
+        <strong>② 坐电梯/扶梯上到出发层</strong>（2 层）——因为到达层两头不通，必须从出发层穿过去<br>
+        <strong>③ 沿出发层步行，找到 5 号门 (Gate 5)</strong><br>
+        <strong>④ 在 5 号门附近坐电梯下一层</strong> → 到达！胶囊酒店就在眼前<br><br>
+        全程步行约 10 分钟。跟着「Digital Airport Hotel」指示牌走即可，或者直接问机场工作人员「Capsule Hotel」，他们都知道。
+      </p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item tl-ocean">
+        <div class="tl-time" style="color: var(--ocean);">02:30 北京时间</div>
+        <div class="tl-title">广州白云机场 T2 出发</div>
+        <div class="tl-desc">航班 8B861，飞行约5小时。凌晨航班比较辛苦，<strong>上飞机就睡</strong>——带上颈枕、眼罩和耳塞。到雅加达是当地早上 06:35，落地后还有胶囊酒店等着你们补觉，不用硬撑。</div>
+        <span class="tl-tag tag-transport">✈️ 红眼航班</span>
+      </div>
+
+      <div class="tl-item tl-teal">
+        <div class="tl-time" style="color: var(--teal);">06:35 雅加达时间 (UTC+7)</div>
+        <div class="tl-title">抵达雅加达苏加诺-哈达机场 T3</div>
+        <div class="tl-desc">
+          入境排队约 30-60 分钟。<strong>落地签费用 500,000 IDR</strong>（约230元），支持刷卡。<br><br>
+          <strong>出关后第一件事：</strong>先在 T3 到达大厅的 ATM 取一些现金（推荐 BCA 或 Mandiri 银行的 ATM，汇率好），胶囊酒店押金和后续小额消费都需要现金。也可以顺便买一张 <em>Telkomsel</em> 电话卡（15-20GB 流量约 100,000-150,000 IDR），在到达大厅就有柜台。
+        </div>
+        <span class="tl-tag tag-tip">💡 入境</span>
+      </div>
+
+      <div class="tl-item tl-purple">
+        <div class="tl-time" style="color: var(--purple);">07:30 — 08:00</div>
+        <div class="tl-title">🛸 步行前往 Digital Airport Hotel</div>
+        <div class="tl-desc">
+          按上面的路线指引走：出到达口 → 上到出发层（2层）→ 找到 5 号门 → 坐电梯下一层 → 到达胶囊酒店前台。全程约 10 分钟。<br><br>
+          <strong>办理入住：</strong>出示护照，每人交 50,000 IDR 押金。前台会给你门禁卡（进出酒店区域和淋浴间都需要）。行李可以直接存在酒店前台或放进储物柜。
+        </div>
+        <span class="tl-tag tag-tip">🛸 入住</span>
+      </div>
+
+      <div class="tl-item tl-green">
+        <div class="tl-time" style="color: var(--green);">08:00 — 14:00</div>
+        <div class="tl-title">😴 胶囊酒店补眠 · 充电回血</div>
+        <div class="tl-desc">
+          红眼航班后最需要的就是好好睡一觉！胶囊舱虽然不大，但床垫质量不错，有空调、灯光可调节，闭上舱帘就是自己的小世界。<br><br>
+          <strong>睡眠小贴士：</strong><br>
+          · 胶囊酒店隔音一般，<strong>强烈建议戴耳塞</strong>（或者用降噪耳机播白噪音）<br>
+          · 空调温度偏低，毛毯不够厚的话穿件长袖睡<br>
+          · 手机和充电宝用舱内 USB 口充满，下午出发时满电状态<br>
+          · 贵重物品锁进储物柜，不要放在舱内开放位置<br><br>
+          睡到自然醒，6 个小时的充足休息能让你们满血复活，精力充沛地迎接巴厘岛！
+        </div>
+        <span class="tl-tag tag-beach">😴 补觉</span>
+      </div>
+
+      <div class="tl-item tl-gold">
+        <div class="tl-time" style="color: var(--gold);">14:00 — 15:00</div>
+        <div class="tl-title">🚿 起床 · 洗漱 · 觅食</div>
+        <div class="tl-desc">
+          睡醒后去公共淋浴间冲个澡（有热水，记得带门禁卡），清清爽爽地开始下半天。退房时前台退还押金。<br><br>
+          <strong>午餐推荐：</strong>胶囊酒店旁边有 <em>Djournal Coffee</em>，可以来一杯印尼本地咖啡提神。T3 航站楼内还有不少餐厅，推荐试试 <em>HokBen</em>（印尼版吉野家，便当约 40,000-60,000 IDR）或 <em>A&W</em> 快餐。想吃正宗印尼味的话找一家 <em>Padang 餐厅</em>，Nasi Goreng（印尼炒饭）配一杯 Es Teh Manis（冰甜茶），元气满满。
+        </div>
+        <span class="tl-tag tag-food">🍽️ 午餐</span>
+      </div>
+
+      <div class="tl-item tl-sunset">
+        <div class="tl-time" style="color: var(--sunset);">15:00 — 15:30</div>
+        <div class="tl-title">🚆 Skytrain T3 → T2</div>
+        <div class="tl-desc">
+          吃饱喝足后，带上行李前往 <strong>Skytrain 站</strong>（T3 内有标识指引），乘坐免费 Skytrain 到 T2。车程约 10 分钟，班次很密不用等太久。到了 T2 之后跟着「Departure」标识走到出发大厅。
+        </div>
+        <span class="tl-tag tag-transport">🚆 Skytrain</span>
+      </div>
+
+      <div class="tl-item tl-ocean">
+        <div class="tl-time" style="color: var(--ocean);">16:00</div>
+        <div class="tl-title">到达 T2 · 办理值机</div>
+        <div class="tl-desc">亚航 QZ818 前往巴厘岛。办完登机手续后可以在 T2 候机区逛逛免税店，买些印尼零食小吃。</div>
+        <span class="tl-tag tag-transport">✈️ 航班</span>
+      </div>
+
+      <div class="tl-item tl-teal">
+        <div class="tl-time" style="color: var(--teal);">18:00 → 20:50</div>
+        <div class="tl-title">✈️ 飞往巴厘岛！</div>
+        <div class="tl-desc">QZ818，飞行约1小时50分钟。巴厘岛是 UTC+8（和北京同一时区），比雅加达快1小时。降落后巴厘岛当地时间 20:50。补过觉的你们现在精神满满，巴厘岛 here we come！</div>
+        <span class="tl-tag tag-transport">✈️ 航班</span>
+      </div>
+
+      <div class="tl-item tl-gold">
+        <div class="tl-time" style="color: var(--gold);">21:30</div>
+        <div class="tl-title">🚗 机场 → Amandaya Canggu</div>
+        <div class="tl-desc">出机场后用 Grab 打车到仓古，约 40-50 分钟，费用约 150,000-200,000 IDR。注意：巴厘岛机场出租车区域有垄断，走出机场大楼外面再叫 Grab 会便宜很多。认准浅蓝色的 <em>Blue Bird</em> 出租车也靠谱。</div>
+        <span class="tl-tag tag-transport">🚗 打车</span><span class="tl-tag tag-tip">💡 省钱</span>
+      </div>
+
+      <div class="tl-item tl-pink">
+        <div class="tl-time" style="color: var(--pink);">22:00</div>
+        <div class="tl-title">🏨 入住 Amandaya Canggu</div>
+        <div class="tl-desc">Check-in，放下行李，享受迎宾饮料。酒店位于仓古核心地带，步行几分钟即可到达 Batu Bolong 主街。</div>
+      </div>
+
+      <div class="tl-item tl-sunset">
+        <div class="tl-time" style="color: var(--sunset);">22:30 — 00:00</div>
+        <div class="tl-title">🍻 仓古初体验 · 深夜觅食</div>
+        <div class="tl-desc">步行到 Batu Bolong 路，这条街就是仓古的灵魂。推荐先去 <em>Warung Local</em> 吃个正宗印尼晚餐（Nasi Goreng 配啤酒，约 60,000 IDR），然后到隔壁的 <em>Old Man's</em> 喝一杯感受氛围——这是仓古最标志性的酒吧，现场音乐、台球桌、来自全世界的冲浪客和背包客。Bintang 啤酒约 35,000 IDR。感受一下巴厘岛的第一夜，早点休息，明天开始正式探索。</div>
+        <span class="tl-tag tag-food">🍽️ 美食</span><span class="tl-tag tag-nightlife">🍻 夜生活</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DAY 1: CANGGU + TANAH LOT ==================== -->
+<section class="day-section" style="background: #fff;">
+  <div class="container">
+    <div class="day-header">
+      <div class="day-num" style="background: linear-gradient(135deg, #1a936f, #30d5c8);">D1</div>
+      <div class="day-header-text">
+        <h2>仓古深度游 · 海神庙日落</h2>
+        <div class="day-date">2月20日 · 周五 · 巴厘岛第一天</div>
+        <div class="day-theme" style="background: var(--teal);">冲浪 · 稻田 · 日落圣殿</div>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item tl-teal">
+        <div class="tl-time" style="color: var(--teal);">10:00</div>
+        <div class="tl-title">起床 · 酒店早餐</div>
+        <div class="tl-desc">Amandaya 含免费早餐，享受一顿悠闲的巴厘岛式早晨。早餐后在酒店附近的租车店租一辆摩托车（Honda Vario 或 Scoopy，约 60,000 IDR/天），这将是接下来几天的座驾。记得要一个好头盔，检查刹车和轮胎。</div>
+      </div>
+
+      <div class="tl-item tl-ocean">
+        <div class="tl-time" style="color: var(--ocean);">11:00 — 12:30</div>
+        <div class="tl-title">🏄 Batu Bolong 海滩 · 冲浪初体验</div>
+        <div class="tl-desc">骑摩托车 5 分钟到达仓古最著名的冲浪海滩。这里浪不算太大，适合新手。海滩上有很多冲浪学校，<em>2小时冲浪课约 350,000 IDR</em>（含教练和冲浪板），如果有基础可以直接租板（50,000 IDR/小时）。就算不冲浪，坐在沙滩上看冲浪客踏浪也是一种享受。海滩面朝西，上午光线柔和，非常适合拍照。</div>
+        <span class="tl-tag tag-beach">🏄 冲浪</span>
+      </div>
+
+      <div class="tl-item tl-sunset">
+        <div class="tl-time" style="color: var(--sunset);">12:30 — 13:30</div>
+        <div class="tl-title">🥑 Hungry Bird Coffee 早午餐</div>
+        <div class="tl-desc">从海滩骑车 3 分钟，这家是仓古口碑最好的 brunch 咖啡馆之一。招牌 Acai Bowl 和牛油果吐司非常出色，咖啡用的是本地精品豆。环境清新，有绿植庭院。人均约 80,000-120,000 IDR。如果想吃更本地的，旁边的 <em>Warung Heboh</em> 提供自助式 Nasi Campur（什锦饭），只要 25,000 IDR，是真正当地人吃的价格和味道。</div>
+        <span class="tl-tag tag-food">🥑 Brunch</span>
+      </div>
+
+      <div class="tl-item tl-green">
+        <div class="tl-time" style="color: var(--green);">13:30 — 15:00</div>
+        <div class="tl-title">🌾 骑行穿越仓古稻田</div>
+        <div class="tl-desc">骑摩托车沿 <em>Jl. Subak Canggu</em>（仓古 Shortcut）穿行，这条小路两旁是大片翠绿稻田，是仓古最经典的骑行路线。路很窄，车速放慢，享受风吹稻浪的感觉。中途会经过一些艺术涂鸦墙和小神庙，随时停下拍照。终点可以到 <em>Canggu Shortcut 稻田观景点</em>，这里是 Instagram 上仓古最火的打卡地——绿色稻田配远处的椰子树，构图绝佳。</div>
+        <span class="tl-tag tag-sight">🌾 稻田</span><span class="tl-tag tag-culture">📸 拍照</span>
+      </div>
+
+      <div class="tl-item tl-purple">
+        <div class="tl-time" style="color: var(--purple);">15:00 — 16:00</div>
+        <div class="tl-title">🧘 放松时光</div>
+        <div class="tl-desc">回酒店冲个澡休息一下，或者去 <em>The Shady Shack</em> 坐坐——这家藏在花园里的素食餐厅是仓古最 chill 的地方之一，点一杯鲜榨果汁或椰子冰沙（约 45,000 IDR），在吊床上躺一会儿。也可以逛逛 <em>Love Anchor Market</em>（仓古本地集市），挑一些手工艺品和巴厘岛特色纪念品。</div>
+        <span class="tl-tag tag-food">🥤 饮品</span>
+      </div>
+
+      <div class="tl-item tl-gold">
+        <div class="tl-time" style="color: var(--gold);">16:00 — 16:30</div>
+        <div class="tl-title">🛵 骑行前往海神庙 Tanah Lot</div>
+        <div class="tl-desc">从仓古出发骑摩托车约 <em>20-25 分钟</em>即可到达海神庙。沿途经过稻田和村庄，路况良好。早点出发占个好位置看日落。</div>
+        <span class="tl-tag tag-transport">🛵 骑行</span>
+      </div>
+
+      <div class="tl-item tl-sunset">
+        <div class="tl-time" style="color: var(--sunset);">16:30 — 18:30</div>
+        <div class="tl-title">⛩️ 海神庙 Tanah Lot · 巴厘岛第一场日落</div>
+        <div class="tl-desc">门票 60,000 IDR。<em>海神庙</em>是巴厘岛最具标志性的景点之一——一座建在海中岩石上的印度教寺庙，涨潮时被海水环绕，退潮时可以走到寺庙底部。日落时分（约 18:40）是最壮观的时刻：太阳从寺庙侧后方沉入印度洋，天空被染成金红色，寺庙的黑色剪影映衬其中。建议在悬崖上方的观景平台找一个面朝西的位置，这里的角度最佳。寺庙底部的岩洞里有一眼淡水泉，当地人认为是圣水。周围还有几座小庙可以逛。</div>
+        <span class="tl-tag tag-sight">⛩️ 地标</span><span class="tl-tag tag-culture">🌅 日落</span>
+      </div>
+
+      <div class="tl-item tl-pink">
+        <div class="tl-time" style="color: var(--pink);">19:00 — 20:30</div>
+        <div class="tl-title">🍽️ 晚餐 · The Lawn Canggu</div>
+        <div class="tl-desc">骑车回仓古，到 <em>The Lawn Canggu</em> 享受海滨晚餐。这家餐厅就在 Batu Bolong 海滩边上，草坪上摆着懒人沙发，可以一边听海浪一边吃饭。推荐烤鱼和鸡尾酒。人均约 200,000-300,000 IDR。如果想省钱，隔壁街的 <em>Balifornia</em> 做的墨西哥 Taco 和 Burrito 非常好吃，配新鲜牛油果，人均约 80,000 IDR。</div>
+        <span class="tl-tag tag-food">🍽️ 晚餐</span>
+      </div>
+
+      <div class="tl-item tl-purple">
+        <div class="tl-time" style="color: var(--purple);">21:00 — 02:00</div>
+        <div class="tl-title">🌙 仓古夜生活</div>
+        <div class="tl-desc">仓古的夜生活是巴厘岛最有活力的，而且比水明漾 (Seminyak) 更有氛围感。推荐路线：<br><br>
+        <em>Deus Ex Machina</em>（21:00-22:30）— 摩托车主题的咖啡馆/酒吧，门口停满了改装摩托，有不定期的现场乐队演出和艺术展。氛围文艺又酷，鸡尾酒约 90,000 IDR。<br><br>
+        <em>Pretty Poison</em>（22:30-00:00）— 带泳池的酒吧，周五晚经常有 Pool Party，DJ 现场打碟。可以跳进泳池里拿着酒嗨，非常放飞。<br><br>
+        <em>Old Man's</em>（00:00-02:00）— 如果还有精力，回到 Old Man's 的深夜模式，这时候最嗨，舞池会很满。Bintang 啤酒便宜，氛围无敌。</div>
+        <span class="tl-tag tag-nightlife">🍸 夜生活</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DAY 2: UBUD ==================== -->
+<section class="day-section">
+  <div class="container">
+    <div class="day-header">
+      <div class="day-num" style="background: linear-gradient(135deg, #2e7d32, #66bb6a);">D2</div>
+      <div class="day-header-text">
+        <h2>乌布文化之旅</h2>
+        <div class="day-date">2月21日 · 周六 · 巴厘岛第二天</div>
+        <div class="day-theme" style="background: #2e7d32;">梯田 · 圣泉 · 猴林 · 王宫</div>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <h3>🛵 今日骑行提示</h3>
+      <p>仓古到乌布约 35 公里，骑摩托车约 <strong>1-1.5 小时</strong>。沿途风景很美，会穿过大片稻田和传统村落。出了仓古后路上车少很多，比较舒服。但乌布周边山路有弯道，注意减速。两人一车长途骑行会有点累，中途在 <em>Tanah Lot 岔路口</em>附近的加油站休息一下。</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item tl-green">
+        <div class="tl-time" style="color: var(--green);">10:00</div>
+        <div class="tl-title">起床 · 酒店早餐</div>
+        <div class="tl-desc">好好吃一顿早餐，今天是全天行程，需要储备体力。带上防晒霜、一瓶水和一件薄外套（乌布海拔比仓古高，山区偶尔会凉）。</div>
+      </div>
+
+      <div class="tl-item tl-teal">
+        <div class="tl-time" style="color: var(--teal);">11:00</div>
+        <div class="tl-title">🛵 出发！仓古 → 乌布</div>
+        <div class="tl-desc">骑上摩托车向东北方向出发。推荐走 <em>Jl. Raya Canggu → Jl. Raya Sempidi → Jl. Raya Ubud</em> 这条路线，比走高速更有风景。沿途会经过巴厘岛传统村庄，可以看到路边的神庙、石雕和供奉台。</div>
+        <span class="tl-tag tag-transport">🛵 骑行 1-1.5h</span>
+      </div>
+
+      <div class="tl-item tl-gold">
+        <div class="tl-time" style="color: var(--gold);">12:30 — 13:30</div>
+        <div class="tl-title">🍛 午餐 · Warung Biah Biah</div>
+        <div class="tl-desc">到达乌布后先填饱肚子。这家位于乌布中心的 Warung 提供地道的巴厘岛菜，推荐 <em>Babi Guling</em>（巴厘烤乳猪）和 <em>Nasi Campur Bali</em>（巴厘什锦饭）。价格亲民（约 45,000-70,000 IDR），味道比那些游客餐厅正宗得多。另一个选择是大名鼎鼎的 <em>Ibu Oka</em>——烤乳猪专门店，安东尼·波登都专门来吃过。</div>
+        <span class="tl-tag tag-food">🍛 本地菜</span>
+      </div>
+
+      <div class="tl-item tl-green">
+        <div class="tl-time" style="color: var(--green);">13:30 — 15:00</div>
+        <div class="tl-title">🌾 德格拉朗梯田 Tegalalang Rice Terraces</div>
+        <div class="tl-desc">从乌布中心骑车约 20 分钟即到。这是巴厘岛最著名的梯田景观——层层叠叠的绿色稻田沿着山谷延伸，配上椰子树和远处的丛林，美得像一幅画。门票 25,000 IDR。走进梯田内部需要走不少台阶，穿舒适的鞋子。<br><br><strong>避坑提醒：</strong>梯田里有很多「自愿捐款」的人拦路要钱（10,000-20,000 IDR），这是半官方的收费，给了就行不用纠结。网红秋千（Bali Swing）就在附近但价格虚高（300,000-500,000 IDR），拍照排队也久，不太推荐——梯田本身就足够壮观了。</div>
+        <span class="tl-tag tag-sight">🌾 地标</span><span class="tl-tag tag-tip">💡 避坑</span>
+      </div>
+
+      <div class="tl-item tl-ocean">
+        <div class="tl-time" style="color: var(--ocean);">15:00 — 16:15</div>
+        <div class="tl-title">🛕 圣泉寺 Tirta Empul</div>
+        <div class="tl-desc">从梯田骑车约 15 分钟。这座建于公元 960 年的寺庙是巴厘岛最神圣的地方之一，以其 <em>净化仪式 (Melukat)</em> 闻名——信徒们在圣泉出水口依次接受泉水冲洗，祈求净化身心。你也可以参与（穿 Sarong 纱笼，入口可租 10,000 IDR），非常震撼的体验。门票 50,000 IDR。<br><br><strong>体验建议：</strong>从左到右依次经过每个出水口，双手合十低头让水冲过头顶。有两个出水口是「葬礼用」的，不要去（有标识）。水很凉，但精神上的感受很特别。</div>
+        <span class="tl-tag tag-culture">🛕 圣地</span><span class="tl-tag tag-sight">💦 体验</span>
+      </div>
+
+      <div class="tl-item tl-purple">
+        <div class="tl-time" style="color: var(--purple);">16:30 — 17:30</div>
+        <div class="tl-title">🐒 乌布猴林 Sacred Monkey Forest</div>
+        <div class="tl-desc">骑车回乌布中心约 25 分钟。这片 12.5 公顷的原始森林里生活着约 1200 只长尾猕猴，古老的印度教寺庙和巨大的榕树交织其中，光影斑驳，氛围神秘。门票 80,000 IDR。<br><br><strong>注意：</strong>猴子非常狡猾！不要带食物进去（它们闻得到），帽子、墨镜、耳环都可能被抢。手机拿稳。不要直视猴子的眼睛（它们认为这是挑衅）。不要试图摸小猴子，母猴会攻击。话虽如此，大部分猴子其实很可爱且习惯了游客，只是要注意防范个别「惯犯」。</div>
+        <span class="tl-tag tag-sight">🐒 自然</span><span class="tl-tag tag-tip">⚠️ 注意</span>
+      </div>
+
+      <div class="tl-item tl-gold">
+        <div class="tl-time" style="color: var(--gold);">17:30 — 18:30</div>
+        <div class="tl-title">🏛️ 乌布王宫 + 艺术市场</div>
+        <div class="tl-desc">猴林出来步行 5 分钟就是 <em>乌布王宫 (Ubud Royal Palace)</em>，免费参观，巴厘岛传统建筑风格非常精美——每一寸石头都有繁复的雕刻。旁边的 <em>乌布艺术市场 (Ubud Art Market)</em> 可以逛逛，有银饰、木雕、batik 蜡染布、手编包等。记得砍价，开价通常是实际价格的 2-3 倍。</div>
+        <span class="tl-tag tag-culture">🏛️ 文化</span><span class="tl-tag tag-sight">🛍️ 购物</span>
+      </div>
+
+      <div class="tl-item tl-sunset">
+        <div class="tl-time" style="color: var(--sunset);">18:30 — 19:30</div>
+        <div class="tl-title">🍽️ 晚餐 · Locavore To</div>
+        <div class="tl-desc">乌布最值得去的餐厅之一，主打用巴厘岛本地食材做创意料理。从田间到餐桌的理念，味道精致但不做作。Tasting Menu 约 350,000-500,000 IDR/人。如果想省一点，<em>Clear Cafe</em> 也很棒——有机健康餐，环境像丛林花园，人均约 100,000 IDR。</div>
+        <span class="tl-tag tag-food">🍽️ 晚餐</span>
+      </div>
+
+      <div class="tl-item tl-pink">
+        <div class="tl-time" style="color: var(--pink);">19:30 — 21:00</div>
+        <div class="tl-title">🛵 返程 · 乌布 → 仓古</div>
+        <div class="tl-desc">天黑后骑摩托车要格外小心！巴厘岛乡间道路没有路灯，注意对向车辆。建议走主路 Jl. Raya Ubud → Jl. Raya Kediri 这条路，路况较好。如果觉得太累或不安全，完全可以叫一辆 Grab Car 回仓古（约 200,000 IDR），第二天再来取摩托车。</div>
+        <span class="tl-tag tag-transport">🛵 骑行</span><span class="tl-tag tag-tip">⚠️ 夜骑注意</span>
+      </div>
+
+      <div class="tl-item tl-purple">
+        <div class="tl-time" style="color: var(--purple);">21:30 — 02:00</div>
+        <div class="tl-title">🌙 回到仓古 · 放松夜晚</div>
+        <div class="tl-desc">今天走了不少路，回到仓古后可以去 <em>La Brisa</em> 小坐——这家用回收渔船木材搭建的海滩酒吧，波西米亚风格，氛围感拉满。或者去 <em>Finn's Beach Club</em> 的夜场模式，有 DJ、泳池和沙滩躺椅。如果累了就回酒店泡个澡休息。</div>
+        <span class="tl-tag tag-nightlife">🌙 放松</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DAY 3: ULUWATU ==================== -->
+<section class="day-section" style="background: #fff;">
+  <div class="container">
+    <div class="day-header">
+      <div class="day-num" style="background: linear-gradient(135deg, #e65100, #ff6723);">D3</div>
+      <div class="day-header-text">
+        <h2>乌鲁瓦图 · 南巴厘悬崖海岸</h2>
+        <div class="day-date">2月22日 · 周日 · 巴厘岛第三天</div>
+        <div class="day-theme" style="background: var(--sunset);">悬崖 · 神庙 · 火舞 · 采购 · 海鲜</div>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <h3>🛵 今日骑行提示</h3>
+      <p>仓古到乌鲁瓦图约 40 公里，骑摩托车约 <strong>1.5-2 小时</strong>（会经过一些拥堵路段）。乌鲁瓦图在巴厘岛最南端的布基特半岛 (Bukit Peninsula)，地势较高，沿途有壮观的悬崖海岸线。南部的路况总体不错，但有些陡坡和弯道。</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item tl-sunset">
+        <div class="tl-time" style="color: var(--sunset);">10:00</div>
+        <div class="tl-title">起床 · 酒店早餐</div>
+        <div class="tl-desc">好好吃早餐，今天又是充实的一天。带好防晒、泳衣和一条 Sarong（多功能纱巾，进寺庙要用，海滩也能当毛巾）。</div>
+      </div>
+
+      <div class="tl-item tl-ocean">
+        <div class="tl-time" style="color: var(--ocean);">11:00</div>
+        <div class="tl-title">🛵 出发！仓古 → 乌鲁瓦图</div>
+        <div class="tl-desc">沿着海岸公路往南骑，经过水明漾 (Seminyak) 和金巴兰 (Jimbaran)，路上可以瞥见一段段美丽的海岸线。进入布基特半岛后地势抬高，路两边开始出现悬崖酒店和高端度假村。</div>
+        <span class="tl-tag tag-transport">🛵 骑行 1.5-2h</span>
+      </div>
+
+      <div class="tl-item tl-teal">
+        <div class="tl-time" style="color: var(--teal);">13:00 — 14:00</div>
+        <div class="tl-title">🍽️ 午餐 · Single Fin Bali</div>
+        <div class="tl-desc">这是乌鲁瓦图最具代表性的悬崖餐厅，建在断崖边上，脚下就是碧蓝的印度洋和巨浪拍打礁石的壮景。点一份 Fish Tacos 或 Nasi Goreng，配上一杯冰啤酒，光是这个景就值了。人均约 150,000-250,000 IDR。每周日下午有 DJ 现场，气氛很好。</div>
+        <span class="tl-tag tag-food">🍽️ 悬崖餐厅</span><span class="tl-tag tag-sight">👀 绝景</span>
+      </div>
+
+      <div class="tl-item tl-ocean">
+        <div class="tl-time" style="color: var(--ocean);">14:00 — 15:30</div>
+        <div class="tl-title">🏖️ Suluban Beach（蓝点海滩）</div>
+        <div class="tl-desc">从 Single Fin 骑车 5 分钟。这是乌鲁瓦图最独特的海滩——需要穿过一个天然岩洞才能到达。洞口光影变幻，像进入另一个世界。海滩不大但被高耸的悬崖环抱，海水湛蓝见底。这里是巴厘岛最顶级的冲浪点之一（浪大，不适合游泳新手），但光是在岩洞里看海浪涌入就够震撼了。洞口的咖啡馆可以坐着发呆。</div>
+        <span class="tl-tag tag-beach">🏖️ 海滩</span><span class="tl-tag tag-culture">📸 拍照</span>
+      </div>
+
+      <div class="tl-item tl-gold">
+        <div class="tl-time" style="color: var(--gold);">15:30 — 17:00</div>
+        <div class="tl-title">⛩️ 乌鲁瓦图寺 Pura Luhur Uluwatu</div>
+        <div class="tl-desc">巴厘岛六大圣庙之一，建在 70 米高的悬崖顶端，三面环海，气势磅礴。门票 50,000 IDR（含 Sarong 租借）。寺庙本身规模不大，但悬崖边的步道风景绝美——脚下是无尽的蓝色大海和白色浪花，远处可以看到整个南海岸线。<br><br><strong>猴子警告：</strong>这里的猴子比猴林的还猖狂！它们会抢墨镜、帽子、手机、水瓶——任何闪亮的、松散的东西。把所有东西收进包里拉好拉链。真被抢了的话，工作人员会用食物跟猴子「交换」帮你拿回来。</div>
+        <span class="tl-tag tag-sight">⛩️ 圣庙</span><span class="tl-tag tag-tip">🐒 防猴</span>
+      </div>
+
+      <div class="tl-item tl-pink">
+        <div class="tl-time" style="color: var(--pink);">17:00 — 17:45</div>
+        <div class="tl-title">占位等待 Kecak 火舞</div>
+        <div class="tl-desc">Kecak Fire Dance 在寺庙旁的露天剧场举行，18:00 开始。这个演出非常热门，建议 17:00 就去排队占好位置。尽量坐在高处靠西的位置——既能看清表演，又能看到背后的日落。门票 150,000 IDR，现场购买。</div>
+        <span class="tl-tag tag-tip">💡 占位</span>
+      </div>
+
+      <div class="tl-item tl-sunset">
+        <div class="tl-time" style="color: var(--sunset);">18:00 — 19:00</div>
+        <div class="tl-title">🔥 Kecak 火舞 · 悬崖日落</div>
+        <div class="tl-desc">这是巴厘岛最震撼的文化体验，没有之一。上百名男性表演者围坐成同心圆，不用任何乐器，仅凭人声合唱「恰克恰克恰克」的节奏，配合印度史诗《罗摩衍那》的故事表演。高潮是火舞环节——表演者在火焰中跳跃翻滚。而这一切的背景，是乌鲁瓦图悬崖上缓缓沉入印度洋的日落。整个场面如梦似幻，起鸡皮疙瘩的那种震撼。一定不要错过。</div>
+        <span class="tl-tag tag-culture">🔥 必看</span><span class="tl-tag tag-sight">🌅 日落</span>
+      </div>
+
+      <div class="tl-item tl-teal">
+        <div class="tl-time" style="color: var(--teal);">19:10 — 19:40</div>
+        <div class="tl-title">🛒 TreVietNam-Ungasan / Ithon Mart ⭐ 首选超市</div>
+        <div class="tl-desc">从乌鲁瓦图寺骑车约 10 分钟即到，地址：<em>Jl. Pura Batu Pageh No.48, Ungasan</em>（地图 App 搜索「TreVietNam-Ungasan」可直达）。这是一家深受当地华人和游客好评的综合超市，价格比游客区便宜不少。同一个地方还有一家越南餐厅。<br><br><strong>推荐采购：</strong>印尼零食（Indomie 方便面整箱带回、各种辣酱 Sambal）、巴厘岛本地咖啡豆、印尼精油和手工皂、Bintang 啤酒周边、水果干、虾片等伴手礼。比机场免税店便宜很多，种类也更全。一次性采购完所有伴手礼最合适。</div>
+        <span class="tl-tag tag-food">🛒 超市采购</span><span class="tl-tag tag-tip">⭐ 首选</span>
+      </div>
+
+      <div class="tl-item tl-green">
+        <div class="tl-time" style="color: var(--green);">19:45 — 21:00</div>
+        <div class="tl-title">🦞 金巴兰海滩海鲜晚餐 Jimbaran Bay</div>
+        <div class="tl-desc">从 Ungasan 骑车约 10 分钟到金巴兰海湾。这里的海滩上一字排开几十家海鲜大排档，桌子就摆在沙滩上，脚踩着沙子，听着海浪，吃炭火烤出的新鲜海鲜——这就是巴厘岛最经典的晚餐体验。<br><br>推荐点：<em>炭烤大虾、烤鱿鱼、烤鲷鱼</em>，配上巴厘岛特色的 <em>Sambal Matah</em>（生辣椒酱）和白米饭。两人一顿丰盛的海鲜晚餐约 400,000-600,000 IDR（180-270元），在国内吃同等品质要贵好几倍。随便挑一家看起来人多的 Warung 就行，味道差别不大。</div>
+        <span class="tl-tag tag-food">🦞 海鲜大餐</span><span class="tl-tag tag-beach">🏖️ 沙滩</span>
+      </div>
+
+      <div class="tl-item tl-purple">
+        <div class="tl-time" style="color: var(--purple);">21:00 — 22:15</div>
+        <div class="tl-title">🛵 返回仓古</div>
+        <div class="tl-desc">金巴兰回仓古约 1 小时。走 <em>Jl. By Pass Ngurah Rai</em> 是最快的路线，路况好且有路灯。注意安全驾驶。</div>
+        <span class="tl-tag tag-transport">🛵 返程</span>
+      </div>
+
+      <div class="tl-item tl-pink">
+        <div class="tl-time" style="color: var(--pink);">22:15 — 02:00</div>
+        <div class="tl-title">🎉 仓古最后一夜</div>
+        <div class="tl-desc">这是在巴厘岛的最后一个完整夜晚，值得好好享受。推荐去 <em>Atlas Beach Fest</em>——2023年新开的超大型海滩俱乐部，号称亚洲最大的海滩俱乐部之一。多个舞台、泳池、DJ 区域，可以从一个区域玩到另一个区域。如果不想太吵闹，<em>La Brisa</em> 的深夜时段很适合两个人在海风中喝最后一杯鸡尾酒，回忆这几天的旅程。</div>
+        <span class="tl-tag tag-nightlife">🎉 最后一夜</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DAY 4: LAST MORNING + DEPARTURE ==================== -->
+<section class="day-section">
+  <div class="container">
+    <div class="day-header">
+      <div class="day-num" style="background: linear-gradient(135deg, #5c6bc0, #7e57c2);">D4</div>
+      <div class="day-header-text">
+        <h2>仓古最后的早晨 · 告别巴厘岛</h2>
+        <div class="day-date">2月23日 · 周一</div>
+        <div class="day-theme" style="background: var(--purple);">悠闲 · 超市扫货 · 出发</div>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item tl-purple">
+        <div class="tl-time" style="color: var(--purple);">10:00</div>
+        <div class="tl-title">起床 · 最后一顿酒店早餐</div>
+        <div class="tl-desc">慢慢享用，不急。把行李整理好，准备退房。</div>
+      </div>
+
+      <div class="tl-item tl-teal">
+        <div class="tl-time" style="color: var(--teal);">10:30 — 11:30</div>
+        <div class="tl-title">☕ 最后一次仓古漫步</div>
+        <div class="tl-desc">骑摩托车到 <em>Crate Cafe</em> 来一杯好咖啡——这是仓古人气最旺的早午餐地点之一，Flat White 做得很好。或者去 <em>The Slow</em>（精品酒店内的咖啡厅），设计感十足，适合最后拍几张照片留念。然后逛一下 <em>Love Anchor Market</em> 买纪念品：巴厘岛手工香薰蜡烛、椰子油皂、编织包、银饰都是不错的伴手礼。</div>
+        <span class="tl-tag tag-food">☕ 咖啡</span><span class="tl-tag tag-sight">🛍️ 购物</span>
+      </div>
+
+      <div class="tl-item tl-ocean">
+        <div class="tl-time" style="color: var(--ocean);">11:30 — 12:00</div>
+        <div class="tl-title">🏨 退还摩托车 · 退房</div>
+        <div class="tl-desc">把摩托车还回去（检查有无新划痕，拍照留证），然后回 Amandaya 办理退房。可以请前台帮忙叫 Grab 去机场。</div>
+      </div>
+
+      <div class="tl-item tl-gold">
+        <div class="tl-time" style="color: var(--gold);">12:00 — 13:00</div>
+        <div class="tl-title">🍜 告别午餐</div>
+        <div class="tl-desc">最后一顿巴厘岛美食！推荐去 <em>The LOE</em>——后院面对稻田的餐厅，主打巴厘岛烤乳猪拼盘，或者再去一次 <em>Warung Local</em> 吃个正宗印尼炒饭。毕竟回国之后就吃不到这个味道了。</div>
+        <span class="tl-tag tag-food">🍜 告别餐</span>
+      </div>
+
+      <div class="tl-item tl-teal">
+        <div class="tl-time" style="color: var(--teal);">13:15 — 13:50</div>
+        <div class="tl-title">🛒 Bintang Supermarket（水明漾店）</div>
+        <div class="tl-desc">打 Grab 从仓古出发，约 15 分钟到达水明漾。地址：<em>Jl. Raya Seminyak No.17</em>。这是巴厘岛最大、最有名的连锁超市，两层楼，商品齐全。除了伴手礼之外，还可以买一些印尼本地零食（比如各种口味的 Tango 威化饼、Chitato 薯片、Max Tea 拉茶）、精油、护肤品等。如果在昨天 Ithon Mart 没买够，这里可以补货。价格公道，明码标价不用砍。</div>
+        <span class="tl-tag tag-food">🛒 超市</span><span class="tl-tag tag-sight">🛍️ 伴手礼</span>
+      </div>
+
+      <div class="tl-item tl-pink">
+        <div class="tl-time" style="color: var(--pink);">14:00 — 14:40</div>
+        <div class="tl-title">🛍️ Mal Bali Galeria（库塔购物中心）</div>
+        <div class="tl-desc">从水明漾开车约 10 分钟即到。地址：<em>Jl. Bypass Ngurah Rai, Simpang Dewa Ruci, Kuta</em>。这是库塔最大的综合购物中心，有超市、品牌店、餐厅和电影院。一楼有 <em>Hypermart</em> 大超市，价格比 Bintang 更便宜一些，适合最后大批量扫货。购物中心紧邻机场方向的主路，逛完直接去机场非常顺路。</div>
+        <span class="tl-tag tag-sight">🛍️ 购物中心</span>
+      </div>
+
+      <div class="tl-item tl-green">
+        <div class="tl-time" style="color: var(--green);">15:00</div>
+        <div class="tl-title">🚗 前往机场</div>
+        <div class="tl-desc">从 Mal Bali Galeria 到 Ngurah Rai 机场只要 <em>10 分钟</em>车程，非常近。打 Grab 约 30,000-50,000 IDR。</div>
+        <span class="tl-tag tag-transport">🚗 打车</span>
+      </div>
+
+      <div class="tl-item tl-sunset">
+        <div class="tl-time" style="color: var(--sunset);">15:15 — 16:30</div>
+        <div class="tl-title">到达机场 · 候机休息</div>
+        <div class="tl-desc">伴手礼已经在三家超市买齐了，到机场轻松候机就好。如果还想最后补点什么，机场免税区也有一些选择。</div>
+        <span class="tl-tag tag-tip">🛍️ 候机</span>
+      </div>
+
+      <div class="tl-item tl-ocean">
+        <div class="tl-time" style="color: var(--ocean);">18:50 → 19:50</div>
+        <div class="tl-title">✈️ 巴厘岛 → 雅加达</div>
+        <div class="tl-desc">QZ809，飞行约2小时（实际约1.5小时，时区差1小时）。到达雅加达 T2，当地时间 19:50。</div>
+        <span class="tl-tag tag-transport">✈️ 航班</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DAY 5: JAKARTA FULL DAY ==================== -->
+<section class="day-section" style="background: #fff;">
+  <div class="container">
+    <div class="day-header">
+      <div class="day-num" style="background: linear-gradient(135deg, #c62828, #e53935);">D5</div>
+      <div class="day-header-text">
+        <h2>雅加达深度一日游</h2>
+        <div class="day-date">2月23日晚 — 2月24日 · 周二</div>
+        <div class="day-theme" style="background: #c62828;">过夜转机 · 23小时探索印尼首都</div>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <h3>⚠️ 航站楼提醒</h3>
+      <p>到达雅加达 <strong>T2</strong>（来自巴厘岛），回广州的航班从 <strong>T3</strong> 出发。需要提前转航站楼（Skytrain 约10分钟）。建议 2月24日 <strong>16:30</strong> 之前到达 T3。</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item tl-pink">
+        <div class="tl-time" style="color: var(--pink);">20:30（2月23日）</div>
+        <div class="tl-title">🏨 入住雅加达市区酒店</div>
+        <div class="tl-desc">从机场 T2 叫 Grab 到市中心约 45 分钟（晚上不堵车），或搭机场快线 ARS 到 BNI City。推荐住在 <em>Kota Tua（老城区）</em>附近或 <em>Thamrin/Sudirman</em>（中央商务区）沿线，方便第二天游玩。市区三星酒店约 300,000-500,000 IDR/晚（140-230元），可以到了再在 Agoda 上订。</div>
+        <span class="tl-tag tag-tip">🏨 住宿</span>
+      </div>
+
+      <div class="tl-item tl-sunset">
+        <div class="tl-time" style="color: var(--sunset);">21:30（2月23日）</div>
+        <div class="tl-title">🍜 雅加达夜宵</div>
+        <div class="tl-desc">雅加达是不夜城，随时能找到好吃的。推荐试试 <em>Martabak</em>——印尼国民宵夜，分咸甜两种：咸的像厚煎饼夹蛋和肉末，甜的是厚松饼抹黄油+巧克力/芝士/花生。路边摊或 GoJek 外卖都能找到。人均约 30,000-50,000 IDR。</div>
+        <span class="tl-tag tag-food">🍜 夜宵</span>
+      </div>
+
+      <div class="tl-item tl-teal">
+        <div class="tl-time" style="color: var(--teal);">10:00（2月24日）</div>
+        <div class="tl-title">起床 · 酒店退房寄存行李</div>
+        <div class="tl-desc">跟酒店前台说一下寄存行李，轻装出发逛雅加达。</div>
+      </div>
+
+      <div class="tl-item tl-gold">
+        <div class="tl-time" style="color: var(--gold);">10:30 — 12:00</div>
+        <div class="tl-title">🏛️ 国家纪念碑 Monas + 独立广场</div>
+        <div class="tl-desc">Grab 前往 <em>Monas (Monumen Nasional)</em>——132米高的国家纪念碑，顶部有35公斤纯金火焰，是雅加达的标志。门票 20,000 IDR，可以坐电梯到观景台俯瞰整个雅加达城市天际线。纪念碑坐落在 <em>独立广场 (Merdeka Square)</em> 中央，面积达80公顷，是世界上最大的城市广场之一。广场周围有总统府、国家博物馆等重要建筑。</div>
+        <span class="tl-tag tag-sight">🏛️ 地标</span>
+      </div>
+
+      <div class="tl-item tl-green">
+        <div class="tl-time" style="color: var(--green);">12:00 — 13:30</div>
+        <div class="tl-title">🍛 午餐 · Nasi Padang</div>
+        <div class="tl-desc">找一家正宗的 <em>Rumah Makan Padang</em>（巴东饭店），推荐 <em>RM Sederhana</em>（连锁品牌，品质稳定）。除了经典的 Rendang，一定要试 <em>Gulai Otak</em>（咖喱牛脑，听起来猎奇但味道极其浓郁绵密）和 <em>Dendeng Balado</em>（辣酱牛肉干）。两人点一桌子菜才 100,000 IDR 左右，超值。</div>
+        <span class="tl-tag tag-food">🍛 美食</span>
+      </div>
+
+      <div class="tl-item tl-ocean">
+        <div class="tl-time" style="color: var(--ocean);">13:30 — 15:00</div>
+        <div class="tl-title">🛍️ Grand Indonesia Mall / 市区漫步</div>
+        <div class="tl-desc">如果天气太热（雅加达 2 月很热），可以去 <em>Grand Indonesia</em> 商场吹空调逛逛——东南亚最大的购物中心之一，各种品牌。或者去 <em>PIK Avenue</em> 附近逛逛当地潮牌。如果对文化更感兴趣，可以去 <em>国家博物馆 (Museum Nasional)</em>——印尼最大的博物馆，展品涵盖从史前到现代的印尼历史，门票 25,000 IDR。</div>
+        <span class="tl-tag tag-sight">🛍️ 购物/文化</span>
+      </div>
+
+      <div class="tl-item tl-purple">
+        <div class="tl-time" style="color: var(--purple);">15:00</div>
+        <div class="tl-title">回酒店取行李 · 前往机场</div>
+        <div class="tl-desc">取行李后搭 ARS 机场快线或 Grab 前往苏加诺-哈达机场 T3。务必 16:30 前到达 T3 办理值机。</div>
+        <span class="tl-tag tag-transport">🚆 前往机场</span>
+      </div>
+
+      <div class="tl-item tl-ocean">
+        <div class="tl-time" style="color: var(--ocean);">18:50 → 01:30+1</div>
+        <div class="tl-title">✈️ 雅加达 → 广州 · 回家</div>
+        <div class="tl-desc">航班 8B860，飞行约5小时。2月25日凌晨 01:30 到达广州白云机场 T2。旅途结束，好好休息！</div>
+        <span class="tl-tag tag-transport">✈️ 回家</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PRACTICAL TIPS ==================== -->
+<section class="tips-section">
+  <div class="container">
+    <h2>实用贴士</h2>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <h3>🛵 摩托车骑行须知</h3>
+        <p>巴厘岛<strong>左侧通行</strong>（和中国相反）。第一次骑先在酒店附近的小路练习。路上小心「会车」——对面来车经常占道。雨天路滑，减速慢行。加油可以去 Pertamina 加油站（Pertalite 约 10,000 IDR/升），路边小摊用玻璃瓶装的汽油价格差不多但质量不稳定。国际驾照最好带上，被查到罚款约 500,000 IDR（但可以协商）。</p>
+      </div>
+      <div class="tip-card">
+        <h3>📱 网络与通讯</h3>
+        <p>落地雅加达后在机场买一张 <strong>Telkomsel</strong> 或 <strong>XL</strong> 的 SIM 卡，30天 15-20GB 流量约 100,000-150,000 IDR。巴厘岛整体网络一般，仓古的咖啡馆 WiFi 通常还行。装好 <strong>Grab</strong>（东南亚的滴滴）和 <strong>GoJek</strong>（印尼本地打车+外卖），这两个 App 在巴厘岛比什么都好用。</p>
+      </div>
+      <div class="tip-card">
+        <h3>💧 饮食安全</h3>
+        <p><strong>不要喝自来水</strong>，包括刷牙也建议用瓶装水。路边摊和 Warung 的食物大部分是安全的，但如果肠胃敏感，先从干净的餐厅开始适应。随身带一些肠胃药（如黄连素、蒙脱石散）以防万一。冰块一般没问题（正规餐厅用的是食用冰），但特别简陋的小摊可以要求不加冰。</p>
+      </div>
+      <div class="tip-card">
+        <h3>🙏 文化礼仪</h3>
+        <p>巴厘岛是印度教为主的地区。进寺庙必须穿 <strong>Sarong</strong>（纱笼）遮住膝盖，大多数寺庙入口可以免费借用或低价租用。女性生理期传统上不进入寺庙（虽然没人会查，但了解一下当地文化是好的）。路边常见小竹篮供品 (Canang Sari)，<strong>不要踩到</strong>——这是巴厘岛人每天的祈祷仪式。</p>
+      </div>
+      <div class="tip-card">
+        <h3>🌧️ 天气与穿搭</h3>
+        <p>2月是巴厘岛<strong>雨季尾声</strong>，几乎每天下午会有一场阵雨（通常 1-2 小时）。带一件轻便雨衣放在摩托车座位下。气温全天 26-32°C，穿短袖短裤就好。防晒霜一定要涂（SPF50+），热带紫外线比你想象的强。去乌布山区带一件薄外套。</p>
+      </div>
+      <div class="tip-card">
+        <h3>💰 砍价与防骗</h3>
+        <p>巴厘岛旅游区的商贩<strong>普遍虚标价格</strong>，Art Market 和路边摊的纪念品开价通常是合理价格的 2-3 倍，大胆砍到 1/3 开始谈。出租车尽量用 Grab 计价，避免被宰。换汇去正规 Money Changer（认准 <strong>BMC</strong> 或 <strong>Central Kuta</strong> 品牌），路边小店汇率看起来高但会暗中克扣。最好还是用机场 ATM 直接取现金。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <div class="container">
+    <p style="font-size: 28px; margin-bottom: 8px;">🌺</p>
+    <p>Selamat Jalan! 一路平安，享受巴厘岛的每一刻。</p>
+    <p style="margin-top: 8px; color: #c7c7cc;">Generated for LUO/JIAXI & WEI/XULIN · Feb 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
