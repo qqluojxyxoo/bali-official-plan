@@ -104,12 +104,35 @@
     position: relative; margin-bottom: 24px;
     background: var(--card); border-radius: 16px; padding: 20px 24px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.04); border: 1px solid #f0f0f2;
+    transition: box-shadow 0.2s;
   }
   .tl-item::before {
     content: ''; position: absolute; left: -29px; top: 24px;
     width: 12px; height: 12px; border-radius: 50%;
     border: 3px solid; background: #fff;
   }
+  /* 卡片头部：时间+标题左边，折叠按钮右边 */
+  .tl-header {
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+  }
+  .tl-header-left { flex: 1; min-width: 0; }
+  /* 折叠按钮 */
+  .tl-toggle {
+    flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+    background: #f2f2f7; border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s, transform 0.25s;
+    margin-top: 2px;
+  }
+  .tl-toggle:hover { background: #e5e5ea; }
+  .tl-toggle svg {
+    width: 14px; height: 14px; transition: transform 0.25s ease;
+    color: #6e6e73; display: block;
+  }
+  /* 折叠状态 */
+  .tl-item.collapsed .tl-toggle svg { transform: rotate(-90deg); }
+  .tl-item.collapsed .tl-body { display: none; }
+  .tl-item.collapsed { padding-bottom: 16px; }
   .tl-time {
     font-size: 13px; font-weight: 700; letter-spacing: 0.3px;
     margin-bottom: 4px;
@@ -371,8 +394,8 @@
       </div>
 
       <div style="margin: 0 0 24px 32px;">
-        <img src="iShot_2026-02-18_19.24.44.png" alt="雅加达机场 AutoGate 自助通关攻略图" style="width:100%; max-width:560px; border-radius:16px; box-shadow:0 8px 32px rgba(0,0,0,0.12); display:block;">
-        <p style="font-size:13px; color:#86868b; margin-top:8px;">📸 雅加达苏加诺-哈达机场 T3 入境指引（来源：小红书 @方洋跨境）</p>
+        <img src="iShot_2026-02-18_19.24.44.png" alt="雅加达机场 AutoGate 自助通关攻略图" style="width:auto; max-width:320px; max-height:420px; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.10); display:block;">
+        <p style="font-size:12px; color:#86868b; margin-top:6px;">📸 来源：小红书 @方洋跨境</p>
       </div>
 
       <div class="tl-item tl-gold">
@@ -963,6 +986,56 @@
     <p style="margin-top: 8px; color: #c7c7cc;">Generated for LUO/JIAXI & WEI/XULIN · Feb 2026</p>
   </div>
 </footer>
+
+<script>
+// 给每个 tl-item 自动加折叠按钮
+document.querySelectorAll('.tl-item').forEach(item => {
+  // 找到 tl-time、tl-title、tl-desc、tl-tag 等子元素
+  const timeEl  = item.querySelector('.tl-time');
+  const titleEl = item.querySelector('.tl-title');
+  const descEl  = item.querySelector('.tl-desc');
+  const tags    = item.querySelectorAll('.tl-tag');
+
+  if (!titleEl) return; // 跳过没有标题的节点
+
+  // 创建折叠按钮
+  const btn = document.createElement('button');
+  btn.className = 'tl-toggle';
+  btn.setAttribute('aria-label', '折叠/展开');
+  btn.innerHTML = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,6 8,10 12,6"/></svg>`;
+
+  // 创建 header 包裹层（时间+标题 左，按钮 右）
+  const header = document.createElement('div');
+  header.className = 'tl-header';
+  const headerLeft = document.createElement('div');
+  headerLeft.className = 'tl-header-left';
+
+  // 创建 body 包裹层（desc + tags）
+  const body = document.createElement('div');
+  body.className = 'tl-body';
+
+  // 把 time 和 title 移进 headerLeft
+  if (timeEl)  headerLeft.appendChild(timeEl);
+  headerLeft.appendChild(titleEl);
+
+  header.appendChild(headerLeft);
+  header.appendChild(btn);
+
+  // 把 desc 和 tags 移进 body
+  if (descEl) body.appendChild(descEl);
+  tags.forEach(t => body.appendChild(t));
+
+  // 清空 item，重新组装
+  item.innerHTML = '';
+  item.appendChild(header);
+  item.appendChild(body);
+
+  // 点击切换折叠
+  btn.addEventListener('click', () => {
+    item.classList.toggle('collapsed');
+  });
+});
+</script>
 
 </body>
 </html>
