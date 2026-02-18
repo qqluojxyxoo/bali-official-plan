@@ -172,6 +172,31 @@
   .tip-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
   .tip-card p { font-size: 14px; color: var(--text2); line-height: 1.6; }
 
+  /* ===== SPOT IMAGE ===== */
+  .spot-img {
+    width: 100%; max-height: 220px; object-fit: cover;
+    border-radius: 12px; margin-top: 12px; display: block;
+  }
+  .spot-img-row {
+    display: flex; gap: 8px; margin-top: 12px;
+  }
+  .spot-img-row img {
+    flex: 1; min-width: 0; height: 160px; object-fit: cover;
+    border-radius: 10px;
+  }
+
+  /* ===== TICKET BOX ===== */
+  .ticket-box {
+    background: linear-gradient(135deg, #fff3cd, #fff8e1);
+    border-radius: 12px; padding: 14px 18px; margin-top: 14px;
+    border-left: 4px solid #f5a623;
+    display: flex; align-items: flex-start; gap: 10px;
+  }
+  .ticket-box-icon { font-size: 22px; flex-shrink: 0; line-height: 1.2; }
+  .ticket-box-text { font-size: 13px; color: #5c3d00; line-height: 1.6; }
+  .ticket-box-text strong { color: #3d2700; }
+  .ticket-box-text a { color: #c07800; text-decoration: underline; }
+
   /* ===== FOOTER ===== */
   .footer {
     text-align: center; padding: 40px 24px; color: var(--text3); font-size: 13px;
@@ -594,6 +619,7 @@
           <strong>📸 拍照 Tips：</strong><br>
           · 让教练帮你用手机拍站板照，超出片！<br>
           · 海滩面朝西，上午逆光人像感觉好
+          <img class="spot-img" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Batu_Bolong_Beach%2C_Canggu.jpg" alt="Batu Bolong Beach 仓古冲浪海滩" loading="lazy">
         </div>
         <span class="tl-tag tag-beach">🏄 冲浪</span><span class="tl-tag tag-tip">新手友好</span>
       </div>
@@ -615,6 +641,7 @@
           · 招牌 Acai Bowl 约 65,000 IDR（≈30元），牛油果吐司约 75,000 IDR（≈34元）<br>
           · 人均约 80,000-120,000 IDR（≈36-55元）<br><br>
           💡 <strong>省钱选项</strong>：旁边 <em>Warung Heboh</em>，自助式 Nasi Campur 只要 25,000 IDR（≈11元），真正当地人的味道
+          <img class="spot-img" src="https://www.coffeeinsurrection.com/images/hungry-bird-coffee-roasters-canngu-specialty-coffee-bali.jpg" alt="Hungry Bird Coffee Canggu" loading="lazy" onerror="this.style.display='none'">
         </div>
         <span class="tl-tag tag-food">🥑 Brunch</span>
       </div>
@@ -630,6 +657,7 @@
           · <strong>③ 梯田</strong> — 搜「<em>Canggu rice terrace viewpoint</em>」，层次感强适合俯拍<br>
           · <strong>④ 路边小神庙</strong> — 随时可见，停下拍照不收费<br><br>
           <strong>💡 拍照技巧：</strong>下午光线偏暖金黄感更好；站田埂小路中间利用稻田前景虚化；遇到稻草人必停！
+          <img class="spot-img" src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Rice_terraces%2C_Bali.jpg" alt="仓古稻田 Canggu Rice Fields" loading="lazy">
         </div>
         <span class="tl-tag tag-sight">🌾 稻田</span><span class="tl-tag tag-culture">📸 打卡</span>
       </div>
@@ -661,6 +689,10 @@
           · 建议提前到悬崖上方观景平台占好面朝西的位置<br>
           · 退潮时可以走到寺庙底部，岩洞内有淡水圣泉<br>
           · 周围还有几座小庙可以逛
+          <div class="spot-img-row">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Tanah-Lot_Bali_Indonesia_Pura-Tanah-Lot-01.jpg" alt="海神庙 Tanah Lot" loading="lazy" onerror="this.style.display='none'">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/The_sunset_in_Tanah_Lot_Temple_Bali.jpg" alt="海神庙日落 Tanah Lot Sunset" loading="lazy" onerror="this.style.display='none'">
+          </div>
         </div>
         <span class="tl-tag tag-sight">⛩️ 地标</span><span class="tl-tag tag-culture">🌅 日落</span>
       </div>
@@ -680,6 +712,7 @@
           · <em>Warung Local</em>：仓古最火的本地 warung，自助式取餐，Nasi Goreng+烤鸡腿约 40,000-50,000 IDR（≈18-23元）<br>
           · <em>Warung Bu Mi</em>：宽敞半露天大排档，当地人和游客都爱，份量大、价格亲，人均 35,000-60,000 IDR（≈16-27元）<br>
           · 氛围热闹、有烟火气，配冰 Bintang 啤酒 20,000 IDR（≈9元）才是最巴厘岛的体验！
+          <img class="spot-img" src="https://bestbeachclubsbali.com/wp-content/uploads/2024/10/the-lawn-canggu-3.jpg" alt="The Lawn Canggu 海滩酒吧" loading="lazy" onerror="this.style.display='none'">
         </div>
         <span class="tl-tag tag-food">🍽️ 晚餐</span><span class="tl-tag tag-tip">二选一</span>
       </div>
@@ -707,6 +740,7 @@
           <strong>🍺 Old Man's（00:00 之后）</strong><br>
           📍 搜「<em>Old Man's Canggu</em>」，Jl. Pantai Batu Bolong<br>
           深夜模式最嗨，舞池很满，Bintang 啤酒 35,000 IDR（≈16元）全场最便宜。
+          <img class="spot-img" src="https://bali.com/wp-content/uploads/2020/09/HarryMarkPhoto_20170728-Deus_Temple_flagship-images-11-of-13.jpg" alt="Deus Ex Machina Canggu" loading="lazy" onerror="this.style.display='none'">
         </div>
         <span class="tl-tag tag-nightlife">🏍️ Deus</span><span class="tl-tag tag-nightlife">🎉 夜生活</span>
       </div>
@@ -755,28 +789,39 @@
       <div class="tl-item tl-green">
         <div class="tl-time" style="color: var(--green);">13:30 — 15:00</div>
         <div class="tl-title">🌾 德格拉朗梯田 Tegalalang Rice Terraces</div>
-        <div class="tl-desc">从乌布中心骑车约 20 分钟即到。这是巴厘岛最著名的梯田景观——层层叠叠的绿色稻田沿着山谷延伸，配上椰子树和远处的丛林，美得像一幅画。门票 25,000 IDR。走进梯田内部需要走不少台阶，穿舒适的鞋子。<br><br><strong>避坑提醒：</strong>梯田里有很多「自愿捐款」的人拦路要钱（10,000-20,000 IDR），这是半官方的收费，给了就行不用纠结。网红秋千（Bali Swing）就在附近但价格虚高（300,000-500,000 IDR），拍照排队也久，不太推荐——梯田本身就足够壮观了。</div>
+        <div class="tl-desc">从乌布中心骑车约 20 分钟即到。这是巴厘岛最著名的梯田景观——层层叠叠的绿色稻田沿着山谷延伸，配上椰子树和远处的丛林，美得像一幅画。门票 25,000 IDR。走进梯田内部需要走不少台阶，穿舒适的鞋子。<br><br><strong>避坑提醒：</strong>梯田里有很多「自愿捐款」的人拦路要钱（10,000-20,000 IDR），这是半官方的收费，给了就行不用纠结。网红秋千（Bali Swing）就在附近但价格虚高（300,000-500,000 IDR），拍照排队也久，不太推荐——梯田本身就足够壮观了。
+          <div class="spot-img-row">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Rice_terraces_on_Bali_-_Tegalalang_Rice_Terrace_-_Indonesia_05.jpg" alt="德格拉朗梯田 Tegalalang" loading="lazy" onerror="this.style.display='none'">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/1_Tegalalang_rice_terrace_ubud_bali.jpg" alt="德格拉朗梯田 Tegalalang Ubud" loading="lazy" onerror="this.style.display='none'">
+          </div>
+        </div>
         <span class="tl-tag tag-sight">🌾 地标</span><span class="tl-tag tag-tip">💡 避坑</span>
       </div>
 
       <div class="tl-item tl-ocean">
         <div class="tl-time" style="color: var(--ocean);">15:00 — 16:15</div>
         <div class="tl-title">🛕 圣泉寺 Tirta Empul</div>
-        <div class="tl-desc">从梯田骑车约 15 分钟。这座建于公元 960 年的寺庙是巴厘岛最神圣的地方之一，以其 <em>净化仪式 (Melukat)</em> 闻名——信徒们在圣泉出水口依次接受泉水冲洗，祈求净化身心。你也可以参与（穿 Sarong 纱笼，入口可租 10,000 IDR），非常震撼的体验。门票 50,000 IDR。<br><br><strong>体验建议：</strong>从左到右依次经过每个出水口，双手合十低头让水冲过头顶。有两个出水口是「葬礼用」的，不要去（有标识）。水很凉，但精神上的感受很特别。</div>
+        <div class="tl-desc">从梯田骑车约 15 分钟。这座建于公元 960 年的寺庙是巴厘岛最神圣的地方之一，以其 <em>净化仪式 (Melukat)</em> 闻名——信徒们在圣泉出水口依次接受泉水冲洗，祈求净化身心。你也可以参与（穿 Sarong 纱笼，入口可租 10,000 IDR），非常震撼的体验。门票 50,000 IDR。<br><br><strong>体验建议：</strong>从左到右依次经过每个出水口，双手合十低头让水冲过头顶。有两个出水口是「葬礼用」的，不要去（有标识）。水很凉，但精神上的感受很特别。
+          <img class="spot-img" src="https://upload.wikimedia.org/wikipedia/commons/8/83/Tirtha_Empul_Temple_-_Purification.jpg" alt="圣泉寺 Tirta Empul 净化仪式" loading="lazy" onerror="this.style.display='none'">
+        </div>
         <span class="tl-tag tag-culture">🛕 圣地</span><span class="tl-tag tag-sight">💦 体验</span>
       </div>
 
       <div class="tl-item tl-purple">
         <div class="tl-time" style="color: var(--purple);">16:30 — 17:30</div>
         <div class="tl-title">🐒 乌布猴林 Sacred Monkey Forest</div>
-        <div class="tl-desc">骑车回乌布中心约 25 分钟。这片 12.5 公顷的原始森林里生活着约 1200 只长尾猕猴，古老的印度教寺庙和巨大的榕树交织其中，光影斑驳，氛围神秘。门票 80,000 IDR。<br><br><strong>注意：</strong>猴子非常狡猾！不要带食物进去（它们闻得到），帽子、墨镜、耳环都可能被抢。手机拿稳。不要直视猴子的眼睛（它们认为这是挑衅）。不要试图摸小猴子，母猴会攻击。话虽如此，大部分猴子其实很可爱且习惯了游客，只是要注意防范个别「惯犯」。</div>
+        <div class="tl-desc">骑车回乌布中心约 25 分钟。这片 12.5 公顷的原始森林里生活着约 1200 只长尾猕猴，古老的印度教寺庙和巨大的榕树交织其中，光影斑驳，氛围神秘。门票 80,000 IDR。<br><br><strong>注意：</strong>猴子非常狡猾！不要带食物进去（它们闻得到），帽子、墨镜、耳环都可能被抢。手机拿稳。不要直视猴子的眼睛（它们认为这是挑衅）。不要试图摸小猴子，母猴会攻击。话虽如此，大部分猴子其实很可爱且习惯了游客，只是要注意防范个别「惯犯」。
+          <img class="spot-img" src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Bali_%E2%80%93_The_Sacred_Monkey_Forest_Sanctuary_%282688754362%29.jpg" alt="乌布猴林 Monkey Forest Ubud" loading="lazy" onerror="this.style.display='none'">
+        </div>
         <span class="tl-tag tag-sight">🐒 自然</span><span class="tl-tag tag-tip">⚠️ 注意</span>
       </div>
 
       <div class="tl-item tl-gold">
         <div class="tl-time" style="color: var(--gold);">17:30 — 18:30</div>
         <div class="tl-title">🏛️ 乌布王宫 + 艺术市场</div>
-        <div class="tl-desc">猴林出来步行 5 分钟就是 <em>乌布王宫 (Ubud Royal Palace)</em>，免费参观，巴厘岛传统建筑风格非常精美——每一寸石头都有繁复的雕刻。旁边的 <em>乌布艺术市场 (Ubud Art Market)</em> 可以逛逛，有银饰、木雕、batik 蜡染布、手编包等。记得砍价，开价通常是实际价格的 2-3 倍。</div>
+        <div class="tl-desc">猴林出来步行 5 分钟就是 <em>乌布王宫 (Ubud Royal Palace)</em>，免费参观，巴厘岛传统建筑风格非常精美——每一寸石头都有繁复的雕刻。旁边的 <em>乌布艺术市场 (Ubud Art Market)</em> 可以逛逛，有银饰、木雕、batik 蜡染布、手编包等。记得砍价，开价通常是实际价格的 2-3 倍。
+          <img class="spot-img" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Ubud_Bali_Indonesia_Royal-Palace-Puri-Saren-Agung-01.jpg" alt="乌布王宫 Ubud Royal Palace" loading="lazy" onerror="this.style.display='none'">
+        </div>
         <span class="tl-tag tag-culture">🏛️ 文化</span><span class="tl-tag tag-sight">🛍️ 购物</span>
       </div>
 
@@ -838,35 +883,62 @@
       <div class="tl-item tl-teal">
         <div class="tl-time" style="color: var(--teal);">13:00 — 14:00</div>
         <div class="tl-title">🍽️ 午餐 · Single Fin Bali</div>
-        <div class="tl-desc">这是乌鲁瓦图最具代表性的悬崖餐厅，建在断崖边上，脚下就是碧蓝的印度洋和巨浪拍打礁石的壮景。点一份 Fish Tacos 或 Nasi Goreng，配上一杯冰啤酒，光是这个景就值了。人均约 150,000-250,000 IDR。每周日下午有 DJ 现场，气氛很好。</div>
+        <div class="tl-desc">这是乌鲁瓦图最具代表性的悬崖餐厅，建在断崖边上，脚下就是碧蓝的印度洋和巨浪拍打礁石的壮景。点一份 Fish Tacos 或 Nasi Goreng，配上一杯冰啤酒，光是这个景就值了。人均约 150,000-250,000 IDR。每周日下午有 DJ 现场，气氛很好。
+          <img class="spot-img" src="https://www.thisislandlife.com/wp-content/uploads/2013/07/this-island-life-single-fin-uluwatu-surf-bali-indonesia-feature-21.jpg" alt="Single Fin Uluwatu 悬崖餐厅" loading="lazy" onerror="this.style.display='none'">
+        </div>
         <span class="tl-tag tag-food">🍽️ 悬崖餐厅</span><span class="tl-tag tag-sight">👀 绝景</span>
       </div>
 
       <div class="tl-item tl-ocean">
         <div class="tl-time" style="color: var(--ocean);">14:00 — 15:30</div>
         <div class="tl-title">🏖️ Suluban Beach（蓝点海滩）</div>
-        <div class="tl-desc">从 Single Fin 骑车 5 分钟。这是乌鲁瓦图最独特的海滩——需要穿过一个天然岩洞才能到达。洞口光影变幻，像进入另一个世界。海滩不大但被高耸的悬崖环抱，海水湛蓝见底。这里是巴厘岛最顶级的冲浪点之一（浪大，不适合游泳新手），但光是在岩洞里看海浪涌入就够震撼了。洞口的咖啡馆可以坐着发呆。</div>
+        <div class="tl-desc">从 Single Fin 骑车 5 分钟。这是乌鲁瓦图最独特的海滩——需要穿过一个天然岩洞才能到达。洞口光影变幻，像进入另一个世界。海滩不大但被高耸的悬崖环抱，海水湛蓝见底。这里是巴厘岛最顶级的冲浪点之一（浪大，不适合游泳新手），但光是在岩洞里看海浪涌入就够震撼了。洞口的咖啡馆可以坐着发呆。
+          <div class="spot-img-row">
+            <img src="https://baliuntold.com/wp-content/uploads/2024/06/Suluban-Beach-Ulu-Bali.jpg" alt="蓝点海滩 Suluban Beach Uluwatu" loading="lazy" onerror="this.style.display='none'">
+            <img src="https://bali.com/wp-content/uploads/2020/11/bluepoint1.jpg" alt="Blue Point Beach Uluwatu" loading="lazy" onerror="this.style.display='none'">
+          </div>
+        </div>
         <span class="tl-tag tag-beach">🏖️ 海滩</span><span class="tl-tag tag-culture">📸 拍照</span>
       </div>
 
       <div class="tl-item tl-gold">
         <div class="tl-time" style="color: var(--gold);">15:30 — 17:00</div>
         <div class="tl-title">⛩️ 乌鲁瓦图寺 Pura Luhur Uluwatu</div>
-        <div class="tl-desc">巴厘岛六大圣庙之一，建在 70 米高的悬崖顶端，三面环海，气势磅礴。门票 50,000 IDR（含 Sarong 租借）。寺庙本身规模不大，但悬崖边的步道风景绝美——脚下是无尽的蓝色大海和白色浪花，远处可以看到整个南海岸线。<br><br><strong>猴子警告：</strong>这里的猴子比猴林的还猖狂！它们会抢墨镜、帽子、手机、水瓶——任何闪亮的、松散的东西。把所有东西收进包里拉好拉链。真被抢了的话，工作人员会用食物跟猴子「交换」帮你拿回来。</div>
+        <div class="tl-desc">巴厘岛六大圣庙之一，建在 70 米高的悬崖顶端，三面环海，气势磅礴。门票 50,000 IDR（含 Sarong 租借）。寺庙本身规模不大，但悬崖边的步道风景绝美——脚下是无尽的蓝色大海和白色浪花，远处可以看到整个南海岸线。<br><br><strong>猴子警告：</strong>这里的猴子比猴林的还猖狂！它们会抢墨镜、帽子、手机、水瓶——任何闪亮的、松散的东西。把所有东西收进包里拉好拉链。真被抢了的话，工作人员会用食物跟猴子「交换」帮你拿回来。
+          <div class="spot-img-row">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Tebing_Uluwatu_Bali_01.jpg" alt="乌鲁瓦图寺悬崖 Uluwatu Temple Cliff" loading="lazy" onerror="this.style.display='none'">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Uluwatu_Temple_sunset_-_Indonesia.jpg" alt="乌鲁瓦图寺日落 Uluwatu Temple Sunset" loading="lazy" onerror="this.style.display='none'">
+          </div>
+        </div>
         <span class="tl-tag tag-sight">⛩️ 圣庙</span><span class="tl-tag tag-tip">🐒 防猴</span>
       </div>
 
       <div class="tl-item tl-pink">
         <div class="tl-time" style="color: var(--pink);">17:00 — 17:45</div>
         <div class="tl-title">占位等待 Kecak 火舞</div>
-        <div class="tl-desc">Kecak Fire Dance 在寺庙旁的露天剧场举行，18:00 开始。这个演出非常热门，建议 17:00 就去排队占好位置。尽量坐在高处靠西的位置——既能看清表演，又能看到背后的日落。门票 150,000 IDR，现场购买。</div>
-        <span class="tl-tag tag-tip">💡 占位</span>
+        <div class="tl-desc">Kecak Fire Dance 在寺庙旁的露天剧场举行，18:00 开始。这个演出非常热门，建议 17:00 就去排队占好位置。尽量坐在高处靠西的位置——既能看清表演，又能看到背后的日落。
+          <div class="ticket-box">
+            <div class="ticket-box-icon">⚠️</div>
+            <div class="ticket-box-text">
+              <strong>强烈建议提前购票！</strong> Kecak 火舞几乎每晚售罄，现场购票常常没有好位置，旺季甚至排队买不到。<br>
+              · 门票：150,000 IDR（≈68元）<br>
+              · <strong><a href="https://www.klook.com/en-US/activity/21638-uluwatu-kecak-fire-dance-show-tickets-bali/" target="_blank">Klook 购票链接 →</a></strong>（推荐提前 3 天以上预订）<br>
+              · 也可在 <a href="https://www.traveloka.com" target="_blank">Traveloka</a> 上购买
+            </div>
+          </div>
+        </div>
+        <span class="tl-tag tag-tip">💡 占位</span><span class="tl-tag tag-culture">⚠️ 提前购票</span>
       </div>
 
       <div class="tl-item tl-sunset">
         <div class="tl-time" style="color: var(--sunset);">18:00 — 19:00</div>
         <div class="tl-title">🔥 Kecak 火舞 · 悬崖日落</div>
-        <div class="tl-desc">这是巴厘岛最震撼的文化体验，没有之一。上百名男性表演者围坐成同心圆，不用任何乐器，仅凭人声合唱「恰克恰克恰克」的节奏，配合印度史诗《罗摩衍那》的故事表演。高潮是火舞环节——表演者在火焰中跳跃翻滚。而这一切的背景，是乌鲁瓦图悬崖上缓缓沉入印度洋的日落。整个场面如梦似幻，起鸡皮疙瘩的那种震撼。一定不要错过。</div>
+        <div class="tl-desc">这是巴厘岛最震撼的文化体验，没有之一。上百名男性表演者围坐成同心圆，不用任何乐器，仅凭人声合唱「恰克恰克恰克」的节奏，配合印度史诗《罗摩衍那》的故事表演。高潮是火舞环节——表演者在火焰中跳跃翻滚。而这一切的背景，是乌鲁瓦图悬崖上缓缓沉入印度洋的日落。整个场面如梦似幻，起鸡皮疙瘩的那种震撼。一定不要错过。
+          <div class="spot-img-row">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Kecak_Fire_Dance%2C_Uluwatu.jpg" alt="Kecak 火舞 Uluwatu" loading="lazy" onerror="this.style.display='none'">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Kecak_and_Fire_Dance_at_Uluwatu_Temple_in_Bali%2C_Indonesia.jpg" alt="Kecak 火舞表演" loading="lazy" onerror="this.style.display='none'">
+          </div>
+        </div>
         <span class="tl-tag tag-culture">🔥 必看</span><span class="tl-tag tag-sight">🌅 日落</span>
       </div>
 
@@ -880,7 +952,9 @@
       <div class="tl-item tl-green">
         <div class="tl-time" style="color: var(--green);">19:45 — 21:00</div>
         <div class="tl-title">🦞 金巴兰海滩海鲜晚餐 Jimbaran Bay</div>
-        <div class="tl-desc">从 Ungasan 骑车约 10 分钟到金巴兰海湾。这里的海滩上一字排开几十家海鲜大排档，桌子就摆在沙滩上，脚踩着沙子，听着海浪，吃炭火烤出的新鲜海鲜——这就是巴厘岛最经典的晚餐体验。<br><br>推荐点：<em>炭烤大虾、烤鱿鱼、烤鲷鱼</em>，配上巴厘岛特色的 <em>Sambal Matah</em>（生辣椒酱）和白米饭。两人一顿丰盛的海鲜晚餐约 400,000-600,000 IDR（180-270元），在国内吃同等品质要贵好几倍。随便挑一家看起来人多的 Warung 就行，味道差别不大。</div>
+        <div class="tl-desc">从 Ungasan 骑车约 10 分钟到金巴兰海湾。这里的海滩上一字排开几十家海鲜大排档，桌子就摆在沙滩上，脚踩着沙子，听着海浪，吃炭火烤出的新鲜海鲜——这就是巴厘岛最经典的晚餐体验。<br><br>推荐点：<em>炭烤大虾、烤鱿鱼、烤鲷鱼</em>，配上巴厘岛特色的 <em>Sambal Matah</em>（生辣椒酱）和白米饭。两人一顿丰盛的海鲜晚餐约 400,000-600,000 IDR（180-270元），在国内吃同等品质要贵好几倍。随便挑一家看起来人多的 Warung 就行，味道差别不大。
+          <img class="spot-img" src="https://upload.wikimedia.org/wikipedia/commons/7/76/Jimbaran_Beach_candle_light_dinner_1.jpg" alt="金巴兰海滩海鲜晚餐 Jimbaran Seafood" loading="lazy" onerror="this.style.display='none'">
+        </div>
         <span class="tl-tag tag-food">🦞 海鲜大餐</span><span class="tl-tag tag-beach">🏖️ 沙滩</span>
       </div>
 
@@ -1019,14 +1093,18 @@
       <div class="tl-item tl-gold">
         <div class="tl-time" style="color: var(--gold);">10:30 — 12:00</div>
         <div class="tl-title">🏛️ 国家纪念碑 Monas + 独立广场</div>
-        <div class="tl-desc">Grab 前往 <em>Monas (Monumen Nasional)</em>——132米高的国家纪念碑，顶部有35公斤纯金火焰，是雅加达的标志。门票 20,000 IDR，可以坐电梯到观景台俯瞰整个雅加达城市天际线。纪念碑坐落在 <em>独立广场 (Merdeka Square)</em> 中央，面积达80公顷，是世界上最大的城市广场之一。广场周围有总统府、国家博物馆等重要建筑。</div>
+        <div class="tl-desc">Grab 前往 <em>Monas (Monumen Nasional)</em>——132米高的国家纪念碑，顶部有35公斤纯金火焰，是雅加达的标志。门票 20,000 IDR，可以坐电梯到观景台俯瞰整个雅加达城市天际线。纪念碑坐落在 <em>独立广场 (Merdeka Square)</em> 中央，面积达80公顷，是世界上最大的城市广场之一。广场周围有总统府、国家博物馆等重要建筑。
+          <img class="spot-img" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Monas_%28monumen_nasional%29_di_Jakarta.jpg" alt="雅加达国家纪念碑 Monas Jakarta" loading="lazy" onerror="this.style.display='none'">
+        </div>
         <span class="tl-tag tag-sight">🏛️ 地标</span>
       </div>
 
       <div class="tl-item tl-green">
         <div class="tl-time" style="color: var(--green);">12:00 — 13:30</div>
         <div class="tl-title">🍛 午餐 · Nasi Padang</div>
-        <div class="tl-desc">找一家正宗的 <em>Rumah Makan Padang</em>（巴东饭店），推荐 <em>RM Sederhana</em>（连锁品牌，品质稳定）。除了经典的 Rendang，一定要试 <em>Gulai Otak</em>（咖喱牛脑，听起来猎奇但味道极其浓郁绵密）和 <em>Dendeng Balado</em>（辣酱牛肉干）。两人点一桌子菜才 100,000 IDR 左右，超值。</div>
+        <div class="tl-desc">找一家正宗的 <em>Rumah Makan Padang</em>（巴东饭店），推荐 <em>RM Sederhana</em>（连锁品牌，品质稳定）。除了经典的 Rendang，一定要试 <em>Gulai Otak</em>（咖喱牛脑，听起来猎奇但味道极其浓郁绵密）和 <em>Dendeng Balado</em>（辣酱牛肉干）。两人点一桌子菜才 100,000 IDR 左右，超值。
+          <img class="spot-img" src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Nasi_Padang_Rendang_Telur.jpg" alt="Nasi Padang 巴东饭" loading="lazy" onerror="this.style.display='none'">
+        </div>
         <span class="tl-tag tag-food">🍛 美食</span>
       </div>
 
