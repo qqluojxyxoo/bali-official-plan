@@ -46,13 +46,13 @@ Vercel 会自动检测 GitHub push，1 分钟内线上同步更新。
 
 ## ⚙️ 修改工作流（Claude 必须遵守）
 
-**每次对行程进行任何修改，必须同步完成以下三件事：**
+**每次对行程进行任何修改，必须按以下顺序完成三件事：**
 
-1. **更新 `public/index.html`** — 修改对应的时间线节点、信息卡片等
-2. **更新 Mac 日历**（iCloud「日程」日历）— 用 `mac-calendar` skill 通过 AppleScript 同步增删改日历事件
-3. **推送到 Vercel** — `git add public/index.html && git commit -m "..." && git push origin main`，自动触发 Vercel 部署
+1. **先更新 Mac 日历**（iCloud「日程」日历）— 用 `mac-calendar` skill 通过 AppleScript 同步增删改日历事件
+2. **再更新 `public/index.html`** — 修改对应的时间线节点、信息卡片等
+3. **最后推送到 Vercel** — `git add public/index.html && git commit -m "..." && git push origin main`，自动触发 Vercel 部署
 
-> **三步缺一不可。** 不能只改 HTML 不改日历，也不能改了不推送。改完后告知用户 Vercel 链接。
+> **三步缺一不可，顺序不可颠倒：先日历 → 再 HTML → 再 push。** 改完后告知用户 Vercel 链接。
 
 ### ⚠️ 日历修改必须遵守的规则（重要！）
 
