@@ -259,24 +259,6 @@
   .warning-box h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
   .warning-box p { font-size: 14px; color: var(--text2); line-height: 1.6; }
 
-  /* D0 collapsible */
-  .day0-details { margin: 0; padding: 0; }
-  .day0-summary {
-    display: flex; align-items: center; justify-content: center;
-    padding: 14px 24px; cursor: pointer; list-style: none;
-    background: linear-gradient(135deg, #e8f4fd, #d6eaf8);
-    border-bottom: 2px dashed #aed6f1;
-  }
-  .day0-summary::-webkit-details-marker { display: none; }
-  .day0-tag {
-    font-size: 14px; font-weight: 600; color: #1b4f72;
-    background: #d6eaf8; border-radius: 20px;
-    padding: 6px 18px; border: 1.5px solid #7fb3d3;
-    letter-spacing: 0.3px;
-  }
-  .day0-details[open] .day0-tag::before { content: "📖 "; }
-  .day0-details:not([open]) .day0-tag::before { content: "▶ "; }
-
   /* ===== DAY TABS ===== */
   .day-tabs {
     position: sticky;
@@ -487,11 +469,7 @@
 </section>
 
 <!-- ==================== DAY 0: TRAVEL + CAPSULE HOTEL REST ==================== -->
-<details class="day0-details" id="day0">
-  <summary class="day0-summary">
-    <span class="day0-tag">✅ D0 · 2月19日 已完成 · 点击展开回忆</span>
-  </summary>
-<section class="day-section">
+<section class="day-section" id="day0">
   <div class="container">
     <div class="day-header">
       <div class="day-num" style="background: linear-gradient(135deg, #1b4f72, #0a84ff);">D0</div>
@@ -701,7 +679,6 @@
     </div>
   </div>
 </section>
-</details>
 
 <!-- ==================== DAY 1: CANGGU + TANAH LOT ==================== -->
 <section class="day-section" id="day1" style="background: #fff;">
@@ -1212,16 +1189,24 @@
         <span class="tl-tag tag-food">🍽️ 晚餐</span>
       </div>
 
+      <div class="tl-item tl-purple collapsed">
+        <div class="tl-time" style="color: var(--purple);">23:30 — 00:00</div>
+        <div class="tl-title">🛵 骑行 仓古 → Vault · 约 8 分钟</div>
+        <div class="tl-desc">从仓古主街骑摩托前往 Vault，沿 Jl. Pantai Berawa 方向，与 FINNS 同侧，约 5-10 分钟。</div>
+        <span class="tl-tag tag-transport">🛵 骑行</span>
+      </div>
+
       <div class="tl-item tl-purple">
-        <div class="tl-time" style="color: var(--purple);">23:30 后</div>
-        <div class="tl-title">🌙 自由夜晚</div>
-        <div class="tl-desc">
-          明天 D3 有乌鲁瓦图全天行程，体力要留着！推荐尽量 00:00 前入睡。<br><br>
-          · 还想嗨：Desa Kitsune 周六夜场（免费 guestlist 提前登记）<br>
-          · 想放松：Old Man's 喝杯 Bintang 听现场音乐<br>
-          · 推荐：早点回酒店，明天乌鲁瓦图值得满血出发！
+        <div class="tl-time" style="color: var(--purple);">00:00 — 02:00</div>
+        <div class="tl-title">🎵 Vault · 巴厘岛地下 Hip-Hop Club</div>
+        <div class="tl-desc">巴厘岛唯一 underground bunker 风格 Hip-Hop 夜店，周六是 <strong>New School Hip-Hop + R&B</strong> 主题场，音响强劲、红色 LED 灯光，氛围炸裂。<br><br>
+          📍 <strong>Jl. Pantai Berawa No.99</strong>，Berawa（Berawa 海滩沿线，离 FINNS 同片区）<br>
+          💰 入场：<strong>约 200,000 IDR/人</strong>（≈90元）含一杯免费饮品<br>
+          🕙 营业至凌晨 03:00，进场越晚越嗨<br><br>
+          · 提前在 <em>vault-bali.com</em> 或 TableCheck 登记 guestlist 可免排队<br>
+          · D3 明天不用早起，可以玩到尽兴 😈
         </div>
-        <span class="tl-tag tag-nightlife">🌙 自由</span>
+        <span class="tl-tag tag-nightlife">🎵 Hip-Hop</span><span class="tl-tag tag-nightlife">🕳️ Underground</span>
       </div>
     </div>
   </div>
