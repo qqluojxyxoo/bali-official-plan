@@ -54,6 +54,20 @@ Vercel 会自动检测 GitHub push，1 分钟内线上同步更新。
 
 > **三步缺一不可。** 不能只改 HTML 不改日历，也不能改了不推送。改完后告知用户 Vercel 链接。
 
+### ⚠️ 日历修改必须遵守的规则（重要！）
+
+**调整时间线时，旧日历事件必须同步处理，不能只加新的：**
+
+- **修改时间** → 用 `modify_event` 更新旧事件（注意：同时改 start 和 end 时，若新 start > 旧 end，先改 end 再改 start，或删除重建）
+- **替换节点** → 先 `delete_event` 删除旧事件，再 `create_event` 创建新事件
+- **新增节点** → 直接 `create_event`，但要检查是否有时间重叠的旧事件需要先删除
+- **每次修改后** → 用 `list_events` 验证当天日历，确认无重复、无遗漏、时间无重叠
+
+**常见错误：**
+- 只创建新事件，忘记删除同一时段的旧事件 → 导致日历出现重复/冲突
+- 调整后半段时间线，忘记检查后续事件（如晚餐、夜生活）是否也需要联动后移
+- modify_event 同时改 start 和 end，若新 start 时间在旧 end 之后，AppleScript 会报错"start must be before end" → 解决：删除旧事件再重建
+
 ---
 
 ## 用户真实需求
@@ -72,9 +86,9 @@ Vercel 会自动检测 GitHub push，1 分钟内线上同步更新。
 | 天数 | 日期 | 内容 |
 |------|------|------|
 | D0 | 2/19 周四 | 凌晨广州出发 → 雅加达 T3 入境 → **Jakarta Airport Hotel T2 补眠** → 飞巴厘岛 → 仓古入住 |
-| D1 | 2/20 周五 | 仓古：租摩托 → 稻田瑜伽 → Sensorium Brunch → Dang! Cookies → **AT 06 数字游民体验** → Love Anchor 集市 → 海神庙日落 → 夜生活 |
-| D2 | 2/21 周六 | 乌布一日游：梯田 → 圣泉寺 → 猴林 → 王宫 |
-| D3 | 2/22 周日 | 乌鲁瓦图：Single Fin 悬崖餐厅 → 蓝点海滩 → 乌鲁瓦图寺 → Kecak 火舞 → 金巴兰海鲜 |
+| D1 | 2/20 周五 | 仓古：租摩托 → Alpha Gym ClassPass(12:00) → Sensorium → Dang! Cookies → Love Anchor → **AT 06 数字游民** → Echo Beach → Pererenan精品街 → **WEFITNESS Hyrox ClassPass(18:00)** → 海神庙日落 → The Lawn晚餐 → 夜生活 |
+| D2 | 2/21 周六 | 运动日：Chandra Yoga Sunrise Flow ClassPass(07:30) → 早餐 → 冲浪 → Alpha Force Thai Boxing ClassPass → FINNS Beach Club |
+| D3 | 2/22 周日 | La Brisa Sunday Market → 乌鲁瓦图：Single Fin 悬崖餐厅 → 蓝点海滩 → 乌鲁瓦图寺 → Kecak 火舞 → 金巴兰海鲜 |
 | D4 | 2/23 周一 | 仓古告别早晨 → 超市扫货 → 飞雅加达 |
 | D5 | 2/24 周二 | 雅加达：Monas → Nasi Padang → 购物 → 飞广州 |
 | 返程 | 2/25 凌晨 | 01:30 广州白云 T2 落地 |
@@ -237,4 +251,4 @@ Vercel 会自动检测 GitHub push，1 分钟内线上同步更新。
 
 ---
 
-*最后更新：2026-02-20*
+*最后更新：2026-02-20（D1实时更新中）*
