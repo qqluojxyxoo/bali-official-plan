@@ -67,6 +67,18 @@ Vercel 会自动检测 GitHub push，1 分钟内线上同步更新。
 - 只创建新事件，忘记删除同一时段的旧事件 → 导致日历出现重复/冲突
 - 调整后半段时间线，忘记检查后续事件（如晚餐、夜生活）是否也需要联动后移
 - modify_event 同时改 start 和 end，若新 start 时间在旧 end 之后，AppleScript 会报错"start must be before end" → 解决：删除旧事件再重建
+- 删除旧事件时，事件名称必须完全精确匹配（包括 emoji），不然找不到 → 先用 list_events 确认确切标题
+
+**⚠️ 强制检查流程（每次修改日历后必做）：**
+1. 修改/新增后立即调用 `list_events YYYY-MM-DD YYYY-MM-DD` 获取当天全部事件
+2. 按时间排序，逐一核查有无重叠：任意两个事件区间 [A_start, A_end] 和 [B_start, B_end] 不得有交集
+3. 若发现重叠：立即 delete + recreate 旧事件
+4. 将检查结果简记录于此（最后一次更新）：
+
+**最后检查记录（2026-02-20 本次更新）：**
+- 已删除：旧 Echo Beach 16:40-16:50、旧 WEFITNESS 17:45-18:30、旧骑行→Tanah Lot 18:30-19:00、旧 Pererenan精品街 16:50-17:35
+- 已创建：AllCaps Park 14:35-15:15、Deus Ex Machina 15:20-16:00、Echo Beach 16:10-16:25、Pererenan精品街 16:30-17:20、WEFITNESS 17:35-18:20、骑行→Tanah Lot 18:20-18:55
+- 验证结果：全天无时间重叠 ✅
 
 ---
 
