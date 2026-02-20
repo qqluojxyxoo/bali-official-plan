@@ -276,6 +276,59 @@
   }
   .day0-details[open] .day0-tag::before { content: "📖 "; }
   .day0-details:not([open]) .day0-tag::before { content: "▶ "; }
+
+  /* ===== DAY TABS ===== */
+  .day-tabs {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 1px 12px rgba(0,0,0,0.06);
+  }
+  .tabs-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .tabs-inner::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+    padding: 10px 16px;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+    color: var(--text2);
+  }
+  .tab-day {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+  .tab-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+  }
+  .tab-btn:hover { color: var(--text); }
+  .tab-btn.tab-active {
+    color: var(--ocean);
+    border-bottom-color: var(--ocean);
+  }
 </style>
 </head>
 <body>
@@ -287,6 +340,36 @@
   <p class="subtitle">巴厘岛 · 仓古 · 乌布 · 乌鲁瓦图 · 雅加达</p>
   <div class="date-badge">2026.02.19 — 02.25 · 7天6夜 · 两人同行</div>
 </section>
+
+<!-- ==================== DAY TABS ==================== -->
+<nav class="day-tabs" id="day-tabs">
+  <div class="tabs-inner">
+    <button class="tab-btn" data-target="day0">
+      <span class="tab-day">D0</span>
+      <span class="tab-label">出发</span>
+    </button>
+    <button class="tab-btn tab-active" data-target="day1">
+      <span class="tab-day">D1</span>
+      <span class="tab-label">仓古</span>
+    </button>
+    <button class="tab-btn" data-target="day2">
+      <span class="tab-day">D2</span>
+      <span class="tab-label">运动日</span>
+    </button>
+    <button class="tab-btn" data-target="day3">
+      <span class="tab-day">D3</span>
+      <span class="tab-label">乌鲁瓦图</span>
+    </button>
+    <button class="tab-btn" data-target="day4">
+      <span class="tab-day">D4</span>
+      <span class="tab-label">告别</span>
+    </button>
+    <button class="tab-btn" data-target="day5">
+      <span class="tab-day">D5</span>
+      <span class="tab-label">雅加达</span>
+    </button>
+  </div>
+</nav>
 
 <!-- ==================== OVERVIEW ==================== -->
 <!-- overview section removed -->
@@ -404,7 +487,7 @@
 </section>
 
 <!-- ==================== DAY 0: TRAVEL + CAPSULE HOTEL REST ==================== -->
-<details class="day0-details">
+<details class="day0-details" id="day0">
   <summary class="day0-summary">
     <span class="day0-tag">✅ D0 · 2月19日 已完成 · 点击展开回忆</span>
   </summary>
@@ -621,7 +704,7 @@
 </details>
 
 <!-- ==================== DAY 1: CANGGU + TANAH LOT ==================== -->
-<section class="day-section" style="background: #fff;">
+<section class="day-section" id="day1" style="background: #fff;">
   <div class="container">
     <div class="day-header">
       <div class="day-num" style="background: linear-gradient(135deg, #1a936f, #30d5c8);">D1</div>
@@ -932,7 +1015,7 @@
 </section>
 
 <!-- ==================== DAY 2: SPORTS DAY ==================== -->
-<section class="day-section">
+<section class="day-section" id="day2">
   <div class="container">
     <div class="day-header">
       <div class="day-num" style="background: linear-gradient(135deg, #2e7d32, #66bb6a);">D2</div>
@@ -1145,7 +1228,7 @@
 </section>
 
 <!-- ==================== DAY 3: ULUWATU ==================== -->
-<section class="day-section" style="background: #fff;">
+<section class="day-section" id="day3" style="background: #fff;">
   <div class="container">
     <div class="day-header">
       <div class="day-num" style="background: linear-gradient(135deg, #e65100, #ff6723);">D3</div>
@@ -1363,7 +1446,7 @@
 </section>
 
 <!-- ==================== DAY 4: LAST MORNING + DEPARTURE ==================== -->
-<section class="day-section">
+<section class="day-section" id="day4">
   <div class="container">
     <div class="day-header">
       <div class="day-num" style="background: linear-gradient(135deg, #5c6bc0, #7e57c2);">D4</div>
@@ -1446,7 +1529,7 @@
 </section>
 
 <!-- ==================== DAY 5: JAKARTA FULL DAY ==================== -->
-<section class="day-section" style="background: #fff;">
+<section class="day-section" id="day5" style="background: #fff;">
   <div class="container">
     <div class="day-header">
       <div class="day-num" style="background: linear-gradient(135deg, #c62828, #e53935);">D5</div>
@@ -1614,6 +1697,52 @@ document.querySelectorAll('.tl-item').forEach(item => {
     item.classList.toggle('collapsed');
   });
 });
+
+// ===== DAY TAB 导航 =====
+(function() {
+  const tabs = document.querySelectorAll('.tab-btn');
+  const dayIds = ['day0','day1','day2','day3','day4','day5'];
+
+  // 点击 → 平滑滚动到目标 day，D0 先展开 details
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.dataset.target;
+      const target = document.getElementById(targetId);
+      if (!target) return;
+
+      // D0 需要先打开 details
+      if (targetId === 'day0' && target.tagName === 'DETAILS') {
+        target.open = true;
+      }
+
+      // 计算滚动位置（减去 tab 栏高度，避免被遮挡）
+      const tabsEl = document.getElementById('day-tabs');
+      const tabsHeight = tabsEl ? tabsEl.offsetHeight : 0;
+      const top = target.getBoundingClientRect().top + window.scrollY - tabsHeight - 8;
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
+  });
+
+  // 滚动 → IntersectionObserver 检测哪天可见，高亮对应 tab
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        tabs.forEach(btn => {
+          btn.classList.toggle('tab-active', btn.dataset.target === id);
+        });
+      }
+    });
+  }, {
+    rootMargin: '-20% 0px -60% 0px',
+    threshold: 0
+  });
+
+  dayIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
+})();
 </script>
 
 </body>
